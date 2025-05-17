@@ -20,14 +20,34 @@ body {
 
 /* -----------------------------------------------------
    NAVBAR: logo + links all on one line, centered
+   with toggle behavior
    ----------------------------------------------------- */
 .site-nav {
   display: flex;
   align-items: center;       /* vertical center of logo/text/links */
   justify-content: center;   /* center the whole group */
   flex-wrap: nowrap;         /* never wrap to next line */
-  gap: 2rem;                 /* even space between items */
+  gap: 2rem;                 /* default spacing between items */
   margin-bottom: 2rem;
+  transition: gap 0.3s ease;
+}
+
+/* When closed: hide non-brand links */
+.site-nav.closed a:not(.brand) {
+  opacity: 0;
+  width: 0;
+  pointer-events: none;
+}
+
+/* When open: show non-brand links */
+.site-nav.open {
+  gap: 2rem;                 /* restore spacing when links are visible */
+}
+.site-nav.open a:not(.brand) {
+  opacity: 1;
+  width: auto;
+  pointer-events: auto;
+  transition: opacity 0.3s ease, width 0.3s ease;
 }
 
 /* Brand (logo + “PRYME”) styling */
