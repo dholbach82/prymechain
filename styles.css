@@ -14,7 +14,7 @@ body {
 /* Homepage-only full-page background */
 body.home {
   /* point this at wherever you dropped your PNG */
-  background-image: url("images/background101.png");
+  background-image: url("background101.jpg");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
