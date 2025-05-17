@@ -6,29 +6,46 @@
   <title>Contact – PrymeChain</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body>
-  <!-- NAVBAR: now with class="site-nav" to pick up your centering rules -->
-  <nav class="site-nav">
+<body class="home">
+  <!-- NAVBAR: logo toggles menu -->
+  <nav class="site-nav closed">
+    <a class="brand" href="#" aria-label="Toggle menu">
+      <img src="pryme_website_32x32.png" alt="PRYME logo" width="32" height="32">
+      <span>PRYME</span>
+    </a>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
     <a href="whitepaper.html">White Paper</a>
     <a href="contact.html">Contact</a>
   </nav>
 
+  <!-- MAIN HEADER -->
   <header>
     <h1>Contact Us</h1>
   </header>
 
+  <!-- CONTACT SECTION -->
   <section>
     <p>
       Questions or contributions? Email us at
       <a href="mailto:team@prymechain.com">team@prymechain.com</a>.
     </p>
-    <!-- Later you can embed a form via a service like Formspree or Netlify Forms -->
+    <!-- You can embed a form via a service like Formspree or Netlify Forms here -->
   </section>
 
+  <!-- FOOTER -->
   <footer>
     <p>© 2025 PrymeChain Project</p>
   </footer>
+
+  <!-- Toggle menu script -->
+  <script>
+    document.querySelector('.site-nav .brand').addEventListener('click', function(e) {
+      e.preventDefault();
+      const nav = document.querySelector('.site-nav');
+      nav.classList.toggle('closed');
+      nav.classList.toggle('open');
+    });
+  </script>
 </body>
 </html>
