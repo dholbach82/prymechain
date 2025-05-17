@@ -53,8 +53,9 @@ body {
 /* Brand (logo + “PRYME”) styling */
 .site-nav .brand {
   display: flex;
-  align-items: center;       /* baseline-align logo and text */
+  align-items: center;
   gap: 0.5rem;
+  margin-right: auto;   
 }
 
 .site-nav .brand img {
