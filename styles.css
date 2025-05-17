@@ -9,7 +9,7 @@ body {
   line-height: 1.6;
 }
 
-/* Center nav, header, and footer */
+/* Center nav, header text, and footer text */
 nav, header, footer {
   text-align: center;
   margin-bottom: 2rem;
@@ -25,21 +25,30 @@ nav a:hover {
   text-decoration: underline;
 }
 
-/* Logo + site title in header */
+/* --------------------------------------------------------------------
+   Logo + site-title: hidden everywhere by default, shown only on homepage
+   -------------------------------------------------------------------- */
 .logo-container {
+  display: none;
+}
+
+/* Homepage header: show and left-align logo + title */
+.home-header .logo-container {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   margin-bottom: 1rem;
 }
 
-.logo {
-  width: 50px;      /* adjust size as needed */
+/* Logo image (only on homepage) */
+.home-header .logo {
+  width: 50px;      /* adjust as needed */
   height: auto;
   margin-right: 0.75rem;
 }
 
-.site-title {
+/* Site title text (only on homepage) */
+.home-header .site-title {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
@@ -47,7 +56,7 @@ nav a:hover {
   color: #76ff03;   /* matching green */
 }
 
-/* Main header text */
+/* Main header text (h1) */
 header h1 {
   margin: 0;        /* remove default spacing */
   font-size: 1.75rem;
