@@ -1,4 +1,4 @@
-/* make the whole page matte-black, with light text */
+/* Base page styles */
 body {
   background-color: #121212;
   color: #f0f0f0;
@@ -9,38 +9,57 @@ body {
   line-height: 1.6;
 }
 
-/* center your nav & footer like before */
-header, nav, footer {
+/* Center nav, header, and footer */
+nav, header, footer {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* tweak your links for better contrast */
+/* Navigation links */
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: #76ff03;   /* a bright green to match your logo */
+  color: #76ff03;   /* bright green to match your logo */
 }
 nav a:hover {
   text-decoration: underline;
 }
 
-/* logo + site name layout */
+/* Logo + site title in header */
 .logo-container {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-bottom: 1rem;
 }
+
 .logo {
-  width: 50px;      /* adjust size as you like */
+  width: 50px;      /* adjust size as needed */
   height: auto;
   margin-right: 0.75rem;
 }
+
 .site-title {
   font-size: 2rem;
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
   color: #76ff03;   /* matching green */
+}
+
+/* Main header text */
+header h1 {
+  margin: 0;        /* remove default spacing */
+  font-size: 1.75rem;
+}
+
+/* Section content */
+section {
+  margin-bottom: 2rem;
+}
+
+/* Footer text */
+footer p {
+  font-size: 0.875rem;
+  color: #888;
 }
