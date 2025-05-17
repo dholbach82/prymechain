@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -9,16 +8,15 @@
 </head>
 <body class="home">
   <!-- NAVBAR: logo toggles menu -->
-<nav class="site-nav closed">
-  <a class="brand" href="#" aria-label="Toggle menu">
-    <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
-  </a>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="whitepaper.html">White Paper</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
+  <nav class="site-nav closed">
+    <a class="brand" href="#" aria-label="Toggle menu">
+      <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
+    </a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="whitepaper.html" class="active">White Paper</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <!-- MAIN HEADER -->
   <header>
@@ -37,7 +35,6 @@
       register their wallet addresses to earn rewards by running nodes, all within a
       robust and energy-efficient framework.
     </p>
-
     <p>
       Built entirely in Rust, Pryme leverages Rust’s safety guarantees and includes
       built-in anomaly tracking and prevention. Users can audit the complete ledger
@@ -51,7 +48,13 @@
   <section>
     <h2>Download</h2>
     <p>
-      <a href="pryme-whitepaper.pdf" download>📄 Download the PrymeChain White Paper (PDF)</a>
+      <a
+        href="https://raw.githubusercontent.com/dholbach82/prymechain/main/whitepaper.pdf"
+        download="pryme-whitepaper.pdf"
+        rel="noopener"
+      >
+        📄 Download the PrymeChain White Paper (PDF)
+      </a>
     </p>
   </section>
 
