@@ -1,6 +1,6 @@
 /* Base page styles */
 body {
-  background-color: #121212;  /* matte-black */
+  background-color: #121212;   /* matte-black */
   color: #f0f0f0;
   font-family: sans-serif;
   max-width: 800px;
@@ -15,50 +15,59 @@ header, footer {
   margin-bottom: 2rem;
 }
 
-/* --------------------------------------------------------------------
-   Homepage nav: flex layout with logo on left and links on right
-   -------------------------------------------------------------------- */
+/* -----------------------------------------------------
+   Nav bar: logo on far left, links perfectly centered
+   ----------------------------------------------------- */
 nav.site-nav {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* start all items at left */
+  position: relative;          /* for absolute centering of links */
   margin-bottom: 2rem;
 }
 
-/* Logo + site title in homepage nav */
+/* Logo + “PRYME” block (stays left) */
 nav.site-nav .logo-container {
   display: flex;
   align-items: center;
 }
+
+/* Logo size = text size */
 nav.site-nav .logo {
-  height: 1em;       /* match link text height */
+  height: 1.5em;   /* match the 1.5em text below */
   width: auto;
   margin-right: 0.5em;
 }
+
+/* Site title next to it */
 nav.site-nav .site-title {
-  font-size: 1em;    /* same as link text */
+  font-size: 1.5em;          /* bigger text */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #76ff03;    /* bright green accent */
+  color: #76ff03;
 }
 
-/* Navigation links (both homepage and other pages) */
-nav, nav.site-nav .nav-links {
+/* Nav links container, absolutely centered */
+nav.site-nav .nav-links {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   align-items: center;
-  justify-content: center;
 }
-nav a {
+
+/* Individual links */
+nav.site-nav .nav-links a {
   margin: 0 1rem;
   text-decoration: none;
   color: #76ff03;
 }
-nav a:hover {
+nav.site-nav .nav-links a:hover {
   text-decoration: underline;
 }
 
-/* Main header (below nav on homepage and on other pages) */
+/* Main header (below nav) */
 header h1 {
   margin: 0;
   font-size: 1.75rem;
