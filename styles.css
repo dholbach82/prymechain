@@ -9,7 +9,7 @@ body {
   line-height: 1.6;
 }
 
-/* Generic centering for header text and footer */
+/* Center header text and footer text */
 header, footer {
   text-align: center;
   margin-bottom: 2rem;
@@ -21,8 +21,8 @@ header, footer {
 nav.site-nav {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* start all items at left */
-  position: relative;          /* for absolute centering of links */
+  justify-content: flex-start; /* keep the logo at the left edge */
+  position: relative;           /* for absolute positioning of links */
   margin-bottom: 2rem;
 }
 
@@ -34,18 +34,18 @@ nav.site-nav .logo-container {
 
 /* Logo size = text size */
 nav.site-nav .logo {
-  height: 1.5em;   /* match the 1.5em text below */
+  height: 1.5em;   /* match the 1.5em site-title */
   width: auto;
   margin-right: 0.5em;
 }
 
 /* Site title next to it */
 nav.site-nav .site-title {
-  font-size: 1.5em;          /* bigger text */
+  font-size: 1.5em;          /* same as logo height */
   font-weight: bold;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #76ff03;
+  color: #76ff03;            /* bright green accent */
 }
 
 /* Nav links container, absolutely centered */
