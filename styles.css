@@ -1,6 +1,6 @@
 /* Base page styles */
 body {
-  background-color: #4d4d4d;  /* lightened 25% from #121212 */
+  background-color: #121212; 
   color: #f0f0f0;
   font-family: sans-serif;
   max-width: 800px;
