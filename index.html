@@ -1,15 +1,13 @@
 <!DOCTYPE html>
-
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>PrymeChain</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
-
 <body class="home">
-  <!-- NAVBAR: logo toggles the menu -->
+  <!-- NAVBAR -->
   <nav class="site-nav closed">
     <a class="brand" href="#" aria-label="Toggle menu">
       <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
@@ -20,21 +18,51 @@
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- HERO / MAIN HEADER -->
+  <!-- HERO -->
   <header>
     <h1>Pryme</h1>
-    <p style="text-align: center; font-size: 1.25rem; margin-top: 0.5rem;">
-      Operate a full Blockchain in 60 Seconds
+    <p style="text-align:center; font-size:1.25rem; margin-top:0.5rem;">
+      Plug-and-Play Blockchain in 60 Seconds
     </p>
   </header>
 
-  <!-- VALUE SNAPSHOT -->
-  <section style="text-align: justify;">
-    <ul style="margin: 0 auto 2rem; max-width: 700px; list-style: disc inside;">
-      <li><strong>Instant onboarding&nbsp;</strong>– guided CLI walks you from wallet to validator in one minute.</li>
-      <li><strong>Enterprise-grade security&nbsp;</strong>– Ed448-Goldilocks signatures and BLAKE3 hashing, all in Rust.</li>
-      <li><strong>Eco-efficient rewards&nbsp;</strong>– lightweight consensus lets you earn while using&nbsp;&lt;1&nbsp;% of PoW energy.</li>
+  <!-- 1 • Quick Intro -->
+  <section style="text-align:justify;">
+    <h2>Universal, Lightweight, Rust-Native</h2>
+    <p>
+      PrymeChain is a self-sustaining, CLI-driven blockchain you can spin up
+      in under one minute—no cloud, no manual config, zero hidden dependencies.
+    </p>
+  </section>
+
+  <!-- 2 • Key Features -->
+  <section style="text-align:justify;">
+    <h2>Why PrymeChain?</h2>
+    <ul style="max-width:700px; margin:1rem auto; list-style:disc inside;">
+      <li><strong>Instant Onboarding</strong> – download one binary, create a wallet, register as a validator in 60s.</li>
+      <li><strong>Enterprise-Grade Security</strong> – Ed448-Goldilocks signatures + BLAKE3 hashing, backed by Rust’s safety.</li>
+      <li><strong>Eco-Efficient Rewards</strong> – fixed 60 s block cadence and halving schedule use &lt;1% of a PoW chain’s energy.</li>
     </ul>
+  </section>
+
+  <!-- 3 • Under the Hood -->
+  <section style="text-align:justify;">
+    <h2>How It Works</h2>
+    <p>
+      Every menu option in Pryme’s CLI directly invokes a Rust module:
+      database setup, wallet gen, node registration, P2P consensus, audit exports
+      (JSON/PDF with BLAKE3 proofs) and more—each step fully transparent and zero-config.
+    </p>
+    <p style="text-align:center;">
+      <a href="about.html">Learn More →</a>
+    </p>
+  </section>
+
+  <!-- 4 • Get Started -->
+  <section style="text-align:center; margin-bottom:2rem;">
+    <a href="pryme-whitepaper.pdf" download style="padding:0.75rem 1.5rem; background:#76ff03; color:#121212; border-radius:4px; text-decoration:none;">
+      Download White Paper (PDF)
+    </a>
   </section>
 
   <!-- FOOTER -->
@@ -42,14 +70,15 @@
     <p>© 2025 Pryme Blockchain</p>
   </footer>
 
-  <!-- Toggle script -->
+  <!-- TOGGLE SCRIPT -->
   <script>
-    document.querySelector('.site-nav .brand').addEventListener('click', function (e) {
-      e.preventDefault();
-      const nav = document.querySelector('.site-nav');
-      nav.classList.toggle('closed');
-      nav.classList.toggle('open');
-    });
+    document.querySelector('.site-nav .brand')
+      .addEventListener('click', e => {
+        e.preventDefault();
+        const nav = document.querySelector('.site-nav');
+        nav.classList.toggle('closed');
+        nav.classList.toggle('open');
+      });
   </script>
 </body>
 </html>
