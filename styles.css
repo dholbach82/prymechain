@@ -59,7 +59,7 @@ body {
 }
 
 .site-nav .brand img {
-  height: 2.5rem;            /* match logo height to text */
+  height: 2rem;            /* match logo height to text */
   width: auto;               /* preserve aspect ratio */
   display: block;
 }
