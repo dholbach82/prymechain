@@ -1,23 +1,21 @@
 /* styles.css */
 
-/* Base page styles */
+/* Base page styles + full-page background on every page */
 body {
-  background-color: #121212;   /* matte-black fallback */
+  /* fallback matte-black */
+  background-color: #121212;
+  /* your new 4K tech background */
+  background-image: url("template_background.png");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
   color: #f0f0f0;
   font-family: sans-serif;
   max-width: 800px;
   margin: auto;
   padding: 2rem;
   line-height: 1.6;
-}
-
-/* Homepage-only full-page background */
-body.home {
-  /* point this at wherever you dropped your PNG */
-  background-image: url("background101.jpg");
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
 }
 
 /* -----------------------------------------------------
