@@ -31,9 +31,9 @@ nav.site-nav a:hover {
 }
 
 /* -----------------------------------------------------
-   HEADER, SECTION, FOOTER
+   HEADER, SECTION, FOOTER: all centered
    ----------------------------------------------------- */
-header, footer {
+header, section, footer {
   text-align: center;
   margin-bottom: 2rem;
 }
@@ -47,11 +47,17 @@ header p {
   margin: 0.5rem 0 0;
 }
 
-section {
-  margin-bottom: 2rem;
+section h2 {
+  margin: 0 0 1rem;
+  font-size: 1.5rem;
+}
+
+section p {
+  margin: 0;
 }
 
 footer p {
   font-size: 0.875rem;
   color: #888;
 }
+
