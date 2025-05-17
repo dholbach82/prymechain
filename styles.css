@@ -1,20 +1,46 @@
-/* styles.css */
+/* make the whole page matte-black, with light text */
 body {
+  background-color: #121212;
+  color: #f0f0f0;
   font-family: sans-serif;
   max-width: 800px;
   margin: auto;
   padding: 2rem;
   line-height: 1.6;
 }
+
+/* center your nav & footer like before */
 header, nav, footer {
   text-align: center;
   margin-bottom: 2rem;
 }
+
+/* tweak your links for better contrast */
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: #0366d6;
+  color: #76ff03;   /* a bright green to match your logo */
 }
 nav a:hover {
   text-decoration: underline;
+}
+
+/* logo + site name layout */
+.logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.logo {
+  width: 50px;      /* adjust size as you like */
+  height: auto;
+  margin-right: 0.75rem;
+}
+.site-title {
+  font-size: 2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #76ff03;   /* matching green */
 }
