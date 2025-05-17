@@ -112,3 +112,11 @@ footer p {
   font-size: 0.875rem;
   color: #888;
 }
+
+/* -----------------------------------------------------
+   MENU OPEN STATE: hide brand text so only logo + links show
+   ----------------------------------------------------- */
+.site-nav.open .brand span {
+  display: none;
+}
+
