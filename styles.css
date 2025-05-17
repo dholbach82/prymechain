@@ -1,3 +1,5 @@
+/* styles.css */
+
 /* Base page styles */
 body {
   background-color: #121212;   /* matte-black fallback */
@@ -11,7 +13,8 @@ body {
 
 /* Homepage-only full-page background */
 body.home {
-  background-image: url("template.png"); /* or "images/template.png" */
+  /* point this at wherever you dropped your PNG */
+  background-image: url("images/background101.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
