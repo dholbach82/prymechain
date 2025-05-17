@@ -1,12 +1,20 @@
 /* Base page styles */
 body {
-  background-color: #121212;   /* matte-black */
+  background-color: #121212;   /* matte-black fallback */
   color: #f0f0f0;
   font-family: sans-serif;
   max-width: 800px;
   margin: auto;
   padding: 2rem;
   line-height: 1.6;
+}
+
+/* Homepage-only full-page background */
+body.home {
+  background-image: url("template.png"); /* or "images/template.png" */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
 }
 
 /* -----------------------------------------------------
@@ -25,6 +33,7 @@ nav a {
   text-decoration: none;
   font-size: 1rem;
 }
+
 nav a:hover {
   text-decoration: underline;
 }
