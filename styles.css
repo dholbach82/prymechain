@@ -67,14 +67,14 @@ body {
   font-size: 1rem;
   line-height: 1;
   font-weight: bold;
-  color: #76ff03;
+  color: #76ff03;            /* keep brand text green */
 }
 
 /* Other links */
 .site-nav a:not(.brand) {
   font-size: 1rem;
   line-height: 1;
-  color: #76ff03;
+  color: #ffffff;            /* changed nav links to white */
   text-decoration: none;
 }
 
