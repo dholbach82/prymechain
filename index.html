@@ -39,12 +39,12 @@
   <section style="text-align:justify;">
     <h2>Why PrymeChain?</h2>
     <ul style="max-width:700px; margin:1rem auto; list-style:disc inside;">
-      <li><strong>Instant Onboarding</strong> – download one binary, create a wallet, register as a validator in 60s.</li>
-      <li><strong>Built in audit system with print outs in JSON/ or PDF.</li> 
+      <li><strong>Instant Onboarding</strong> – download one binary, create a wallet, register as a validator in 60 s.</li>
+      <li><strong>Built-in Audit System</strong> – export transaction logs in JSON or PDF with BLAKE3 fingerprints.</li>
       <li><strong>Enterprise-Grade Security</strong> – Ed448-Goldilocks signatures + BLAKE3 hashing.</li>
-      <li><strong>100% written in Rust language and uses all its security features and methods.</li>
-      <li><strong>Eco-Efficient Rewards</strong> – fixed 60 s block cadence and halving schedule use &lt;1% of a PoW chain’s energy.</li>
-      <li><strong>300 Million max supply (200 M circulating supply + 100 M reward distribution).</li>
+      <li><strong>Rust-Powered</strong> – 100 % written in Rust, leveraging its memory-safety guarantees.</li>
+      <li><strong>Eco-Efficient Rewards</strong> – fixed 60 s block cadence uses <1 % of a PoW chain’s energy.</li>
+      <li><strong>300 M Max Supply</strong> – 200 M pre-minted + 100 M for validator rewards.</li>
     </ul>
   </section>
 
@@ -52,9 +52,9 @@
   <section style="text-align:justify;">
     <h2>How It Works</h2>
     <p>
-      Every menu option in Pryme’s CLI directly invokes a Rust module:
-      database setup, wallet gen, node registration, P2P consensus, audit exports
-      (JSON/PDF with BLAKE3 proofs) and more—each step fully transparent and zero-config.
+      Every menu option in Pryme’s CLI directly invokes a Rust module: database setup,
+      wallet generation, node registration, P2P consensus, audit exports (JSON/PDF
+      with BLAKE3 proofs) and more—each step fully transparent and zero-config.
     </p>
     <p style="text-align:center;">
       <a href="about.html" style="color:#76ff03; text-decoration:none;">
@@ -65,13 +65,13 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Pryme Blockchain</p>
+    <p>© 2025 PrymeChain Project</p>
   </footer>
 
   <!-- TOGGLE SCRIPT -->
   <script>
     document.querySelector('.site-nav .brand')
-      .addEventListener('click', e => {
+      .addEventListener('click', function(e) {
         e.preventDefault();
         const nav = document.querySelector('.site-nav');
         nav.classList.toggle('closed');
