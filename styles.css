@@ -4,7 +4,7 @@
 body {
   /* fallback matte-black */
   background-color: #121212;
-  /* your new 4K tech background */
+  /* tech background */
   background-image: url("template_background.png");
   background-size: cover;
   background-position: center;
