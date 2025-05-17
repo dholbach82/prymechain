@@ -9,76 +9,48 @@ body {
   line-height: 1.6;
 }
 
-/* Center header text and footer text */
+/* -----------------------------------------------------
+   NAVBAR: center the links, with equal gaps between
+   ----------------------------------------------------- */
+nav.site-nav {
+  display: flex;
+  justify-content: center;   /* center the link group */
+  align-items: center;
+  gap: 2rem;                  /* space between each link */
+  margin-bottom: 2rem;
+}
+
+nav.site-nav a {
+  color: #76ff03;             /* bright green accent */
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+nav.site-nav a:hover {
+  text-decoration: underline;
+}
+
+/* -----------------------------------------------------
+   HEADER, SECTION, FOOTER
+   ----------------------------------------------------- */
 header, footer {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* -----------------------------------------------------
-   Nav bar: logo on far left, links perfectly centered
-   ----------------------------------------------------- */
-nav.site-nav {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* keep the logo at the left edge */
-  position: relative;           /* for absolute positioning of links */
-  margin-bottom: 2rem;
-}
-
-/* Logo + “PRYME” block (stays left) */
-nav.site-nav .logo-container {
-  display: flex;
-  align-items: center;
-}
-
-/* Logo size = text size */
-nav.site-nav .logo {
-  height: 1.5em;   /* match the 1.5em site-title */
-  width: auto;
-  margin-right: 0.5em;
-}
-
-/* Site title next to it */
-nav.site-nav .site-title {
-  font-size: 1.5em;          /* same as logo height */
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #76ff03;            /* bright green accent */
-}
-
-/* Nav links container, absolutely centered */
-nav.site-nav .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  display: flex;
-  align-items: center;
-}
-
-/* Individual links */
-nav.site-nav .nav-links a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: #76ff03;
-}
-nav.site-nav .nav-links a:hover {
-  text-decoration: underline;
-}
-
-/* Main header (below nav) */
 header h1 {
   margin: 0;
   font-size: 1.75rem;
 }
 
-/* Section content */
+header p {
+  margin: 0.5rem 0 0;
+}
+
 section {
   margin-bottom: 2rem;
 }
 
-/* Footer text */
 footer p {
   font-size: 0.875rem;
   color: #888;
