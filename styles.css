@@ -19,23 +19,46 @@ body {
 }
 
 /* -----------------------------------------------------
-   NAVBAR: target every <nav>, center links with spacing
+   NAVBAR: logo + links all on one line, centered
    ----------------------------------------------------- */
-nav {
+.site-nav {
   display: flex;
-  justify-content: center;   /* center the link group */
-  align-items: center;
-  gap: 2rem;                  /* even space between links */
+  align-items: center;       /* vertical center of logo/text/links */
+  justify-content: center;   /* center the whole group */
+  flex-wrap: nowrap;         /* never wrap to next line */
+  gap: 2rem;                 /* even space between items */
   margin-bottom: 2rem;
 }
 
-nav a {
-  color: #76ff03;             /* bright green accent */
-  text-decoration: none;
-  font-size: 1rem;
+/* Brand (logo + “PRYME”) styling */
+.site-nav .brand {
+  display: flex;
+  align-items: center;       /* baseline-align logo and text */
+  gap: 0.5rem;
 }
 
-nav a:hover {
+.site-nav .brand img {
+  height: 1.5rem;            /* match logo height to text */
+  width: auto;               /* preserve aspect ratio */
+  display: block;
+}
+
+.site-nav .brand span {
+  font-size: 1rem;
+  line-height: 1;
+  font-weight: bold;
+  color: #76ff03;
+}
+
+/* Other links */
+.site-nav a:not(.brand) {
+  font-size: 1rem;
+  line-height: 1;
+  color: #76ff03;
+  text-decoration: none;
+}
+
+.site-nav a:not(.brand):hover {
   text-decoration: underline;
 }
 
