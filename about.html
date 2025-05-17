@@ -7,64 +7,118 @@
   <title>About – PrymeChain</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
+
 <body class="home">
   <!-- NAVBAR: logo toggles menu -->
-<nav class="site-nav closed">
-  <a class="brand" href="#" aria-label="Toggle menu">
-    <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
-  </a>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="whitepaper.html">White Paper</a>
-  <a href="contact.html">Contact</a>
-</nav>
-
+  <nav class="site-nav closed">
+    <a class="brand" href="#" aria-label="Toggle menu">
+      <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
+    </a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="whitepaper.html">White Paper</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
   <!-- MAIN HEADER -->
   <header>
     <h1>About PrymeChain</h1>
   </header>
 
-  <!-- ABOUT SECTION -->
-<section style="text-align: justify;">
-  <p>
-    Most blockchain platforms today require complex setups, steep learning curves,
-    and heavy energy consumption—putting a barrier between you and the power of
-    decentralized apps. PrymeChain changes all that with a true plug-and-play
-    experience.
-  </p>
+  <!-- 1 • Why PrymeChain -->
+  <section style="text-align: justify;">
+    <p>
+      Most blockchain platforms today demand complex setups, steep learning curves,
+      and high energy consumption—putting a barrier between you and the power of
+      decentralized apps. PrymeChain changes all that with a true <em>plug-and-play</em>
+      experience.
+    </p>
 
-  <p>
-    In under one minute, you can download a single Rust binary, create your wallet,
-    register as a validator, launch the network, send tokens, self-audit your ledger,
-    and begin earning rewards—all through an intuitive CLI. No cloud services,
-    no extra dependencies, no buried configuration files.
-  </p>
+    <p>
+      In under one minute you can download a single Rust binary, create your wallet,
+      register as a validator, launch the network, send tokens, self-audit your
+      ledger, and begin earning rewards—all through an intuitive CLI. No cloud
+      services, no extra dependencies, no buried configuration files.
+    </p>
 
-  <p>
-    Our lightweight consensus and built-in anomaly tracking deliver enterprise-grade
-    security and on-chain verifiability, while using a fraction of the energy of
-    traditional Proof-of-Work chains. By making key management, auditing, and
-    reward-earning first-class features, PrymeChain brings blockchain from a niche
-    developer tool to an everyday utility for newcomers, merchants, and large
-    organizations alike.
-  </p>
-</section>
+    <p>
+      Our lightweight consensus and built-in anomaly tracking deliver enterprise-grade
+      security and on-chain verifiability while using a fraction of the energy of
+      Proof-of-Work systems. By making key management, auditing, and rewards
+      first-class features, PrymeChain brings blockchain from a niche developer tool
+      to an everyday utility for newcomers, merchants, and large organizations alike.
+    </p>
+  </section>
 
+  <!-- 2 • The Menu-Driven CLI -->
+  <section>
+    <h2>Pryme Management Menu</h2>
+    <img src="menu.png" alt="Pryme CLI menu screenshot" style="max-width:100%; border-radius:8px; margin-bottom:1rem;">
+    <p style="text-align: justify;">
+      Pryme’s interactive, number-driven CLI surfaces every subsystem through
+      a single, easy-to-navigate menu. Each option maps directly to a Rust module
+      and deterministic data flow:
+    </p>
+
+    <ol style="max-width:800px; margin:auto; text-align:left;">
+      <li><strong>Setup&nbsp;Database (1)</strong> – auto-creates on-disk key-value stores.</li>
+      <li><strong>Generate New Wallet (2)</strong> – creates an Ed448 key-pair, encrypts it with your pass-phrase, and stores it securely.</li>
+      <li><strong>Open Encrypted Key (3)</strong> – decrypts a private key in a temp buffer and auto-wipes after 30 s.</li>
+      <li><strong>Setup Registry DB (4)</strong> – initializes the validator registry.</li>
+      <li><strong>Register Node (5)</strong> – adds your wallet to the registry and schedules rewards.</li>
+      <li><strong>View Participant Status (6)</strong> – shows active validators vs. available slots.</li>
+      <li><strong>Start Node 🚀 (7)</strong> – boots P2P, mints the genesis block, and begins consensus.</li>
+      <li><strong>Backup Wallet (8)</strong> – exports an encrypted wallet file.</li>
+      <li><strong>List Wallets (9)</strong> – scans the wallet directory and prints all addresses.</li>
+      <li><strong>Blockchain Console (10)</strong> – streams live block headers and lets you browse history.</li>
+      <li><strong>Send / Receive PRYME (11–12)</strong> – transfer coins instantly with zero fees.</li>
+      <li><strong>Balance of Wallet (13)</strong> – query any address balance.</li>
+      <li><strong>Debug DB Keys (14)</strong> – low-level key inspection for power users.</li>
+      <li><strong>Pryme Info / FAQ (15–16)</strong> – built-in docs and best-practices.</li>
+      <li><strong>Audit Report (17)</strong> – export any block range as JSON or PDF with BLAKE3 fingerprints.</li>
+      <li><strong>Exit (18)</strong> – gracefully shuts down all services.</li>
+    </ol>
+  </section>
+
+  <!-- 3 • Advantage of Simplicity -->
+  <section>
+    <h2>Advantage&nbsp;of&nbsp;Simplicity (AOS)</h2>
+    <p style="text-align: justify;">
+      Pryme replaces energy-hungry, multi-round consensus with AOS—three pillars that
+      keep the chain lightweight and transparent:
+    </p>
+    <ul style="max-width:800px; margin:auto; text-align:left; list-style: disc inside;">
+      <li><strong>Transparent Registry</strong> – every validator opt-in is recorded on-chain.</li>
+      <li><strong>Deterministic Participation</strong> – fixed 60 s block cadence, no mining race.</li>
+      <li><strong>On-Chain Rewards</strong> – predictable halving schedule mints 100 M PRYME over ≈108 years.</li>
+    </ul>
+  </section>
+
+  <!-- 4 • Tokenomics Snapshot -->
+  <section>
+    <h2>Tokenomics at a Glance</h2>
+    <p style="text-align: justify;">
+      Total supply is capped at <strong>300 M PRYME</strong>:
+      200 M pre-minted for liquidity, development, research, and founders;
+      100 M released to validators via the halving schedule.
+    </p>
+  </section>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Pryme Blockchain</p>
+    <p>© 2025 Pryme Blockchaint</p>
   </footer>
 
   <!-- Toggle menu script -->
   <script>
-    document.querySelector('.site-nav .brand').addEventListener('click', function(e) {
-      e.preventDefault();
-      const nav = document.querySelector('.site-nav');
-      nav.classList.toggle('closed');
-      nav.classList.toggle('open');
-    });
+    document
+      .querySelector(".site-nav .brand")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        const nav = document.querySelector(".site-nav");
+        nav.classList.toggle("closed");
+        nav.classList.toggle("open");
+      });
   </script>
 </body>
 </html>
