@@ -24,7 +24,7 @@ body {
    ----------------------------------------------------- */
 .site-nav {
   display: flex;
-  align-items: center;       /* vertical center of logo/text/links */
+  align-items: center;       /* vertical center of logo/links */
   justify-content: center;   /* center the whole group */
   flex-wrap: nowrap;         /* never wrap to next line */
   gap: 2rem;                 /* default spacing between items */
@@ -50,32 +50,22 @@ body {
   transition: opacity 0.3s ease, width 0.3s ease;
 }
 
-/* Brand (logo + “PRYME”) styling */
+/* Brand (logo only) styling */
 .site-nav .brand {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin-right: auto;   
+  margin-right: auto;        /* push links to the right */
 }
 
 .site-nav .brand img {
-  height: 2rem;            /* match logo height to text */
+  height: 2rem;              /* control displayed logo size */
   width: auto;               /* preserve aspect ratio */
   display: block;
 }
 
-.site-nav .brand span {
-  font-size: 1rem;
-  line-height: 1;
-  font-weight: bold;
-  color: #76ff03;            /* keep brand text green */
-}
-
-/* Other links */
+/* Nav links */
 .site-nav a:not(.brand) {
   font-size: 1rem;
   line-height: 1;
-  color: #ffffff;            /* changed nav links to white */
+  color: #ffffff;            /* white links */
   text-decoration: none;
 }
 
@@ -113,11 +103,3 @@ footer p {
   font-size: 0.875rem;
   color: #888;
 }
-
-/* -----------------------------------------------------
-   MENU OPEN STATE: hide brand text so only logo + links show
-   ----------------------------------------------------- */
-.site-nav.open .brand span {
-  display: none;
-}
-
