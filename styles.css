@@ -9,56 +9,58 @@ body {
   line-height: 1.6;
 }
 
-/* Center nav, header text, and footer text */
-nav, header, footer {
+/* Generic centering for header text and footer */
+header, footer {
   text-align: center;
   margin-bottom: 2rem;
 }
 
-/* Navigation links */
+/* --------------------------------------------------------------------
+   Homepage nav: flex layout with logo on left and links on right
+   -------------------------------------------------------------------- */
+nav.site-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+/* Logo + site title in homepage nav */
+nav.site-nav .logo-container {
+  display: flex;
+  align-items: center;
+}
+nav.site-nav .logo {
+  height: 1em;       /* match link text height */
+  width: auto;
+  margin-right: 0.5em;
+}
+nav.site-nav .site-title {
+  font-size: 1em;    /* same as link text */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #76ff03;    /* bright green accent */
+}
+
+/* Navigation links (both homepage and other pages) */
+nav, nav.site-nav .nav-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 nav a {
   margin: 0 1rem;
   text-decoration: none;
-  color: #76ff03;   /* bright green to match your logo */
+  color: #76ff03;
 }
 nav a:hover {
   text-decoration: underline;
 }
 
-/* --------------------------------------------------------------------
-   Logo + site-title: hidden everywhere by default, shown only on homepage
-   -------------------------------------------------------------------- */
-.logo-container {
-  display: none;
-}
-
-/* Homepage header: show and left-align logo + title */
-.home-header .logo-container {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  margin-bottom: 1rem;
-}
-
-/* Logo image (only on homepage) */
-.home-header .logo {
-  width: 50px;      /* adjust as needed */
-  height: auto;
-  margin-right: 0.75rem;
-}
-
-/* Site title text (only on homepage) */
-.home-header .site-title {
-  font-size: 2rem;
-  font-weight: bold;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  color: #76ff03;   /* matching green */
-}
-
-/* Main header text (h1) */
+/* Main header (below nav on homepage and on other pages) */
 header h1 {
-  margin: 0;        /* remove default spacing */
+  margin: 0;
   font-size: 1.75rem;
 }
 
@@ -72,4 +74,3 @@ footer p {
   font-size: 0.875rem;
   color: #888;
 }
-
