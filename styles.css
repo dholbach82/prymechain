@@ -10,23 +10,22 @@ body {
 }
 
 /* -----------------------------------------------------
-   NAVBAR: center the links, with equal gaps between
+   NAVBAR: target every <nav>, center links with spacing
    ----------------------------------------------------- */
-nav.site-nav {
+nav {
   display: flex;
   justify-content: center;   /* center the link group */
   align-items: center;
-  gap: 2rem;                  /* space between each link */
+  gap: 2rem;                  /* even space between links */
   margin-bottom: 2rem;
 }
 
-nav.site-nav a {
+nav a {
   color: #76ff03;             /* bright green accent */
   text-decoration: none;
   font-size: 1rem;
 }
-
-nav.site-nav a:hover {
+nav a:hover {
   text-decoration: underline;
 }
 
@@ -60,4 +59,3 @@ footer p {
   font-size: 0.875rem;
   color: #888;
 }
-
