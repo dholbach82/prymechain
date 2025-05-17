@@ -5,7 +5,7 @@ body {
   /* fallback matte-black */
   background-color: #121212;
   /* tech background */
-  background-image: url("template_background.png");
+  background-image: url("background.png");
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
