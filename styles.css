@@ -103,3 +103,19 @@ footer p {
   font-size: 0.875rem;
   color: #888;
 }
+
+@media (max-width: 600px) {
+  .rust-lint-badge-row {
+    flex-direction: column !important;
+    align-items: center !important;
+    gap: 0.4em !important;
+    text-align: center !important;
+  }
+  .rust-lint-badge-row img {
+    margin-bottom: 0.5em !important;
+  }
+  .rust-lint-badge-row div {
+    text-align: center !important;
+    margin-left: 0 !important;
+  }
+}
