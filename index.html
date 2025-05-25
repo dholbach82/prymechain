@@ -85,18 +85,29 @@
 
 <!-- PRODUCTION-READY RUST LINT BADGE -->
 <section style="max-width:700px; margin:2.2rem auto 1.7rem auto; text-align:center;">
-  <div style="display:flex; align-items:center; justify-content:center; gap:0.8em; margin:0 auto;">
-    <img src="clippy_free.png" alt="Rust Lint 0 errors" style="height:32px; width:auto; vertical-align:middle;">
+  <div class="rust-lint-badge-row" style="
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.9em;
+    margin: 0 auto;
+    background: rgba(30, 35, 35, 0.93);
+    border-radius: 9px;
+    box-shadow: 0 1px 8px #2227;
+    padding: 1.1em 1.25em;
+    ">
+    <img src="clippy_free.png" alt="Rust Lint 0 errors"
+      style="height: 32px; width: 32px; min-width: 32px; vertical-align: middle; background: #222; border-radius: 50%; border: 2px solid #273; box-shadow: 0 0 3px #8ac926;">
     <div style="text-align:left;">
-      <span style="color:#fff; font-size:1.15rem;">
-        <strong>Our blockchain is developed to the highest standard in Rust:</strong>
+      <span style="color:#8ac926; font-size:1.15rem;">
+        <strong>Rust production code: Zero errors, zero panics.</strong>
       </span>
-      <ul style="list-style:disc inside; margin:0.5em 0 0 1.2em; color:#8ac926; font-size:1em;">
-        <li>Over 75,000+ lines of free error code</li>
-        <li>All errors reduced to 0 for production</li>
-        <li>All warnings are fixed and forbidden to recur</li>
-        <li>All features, binaries, tests pass clean</li>
-        <li>Ready for long-term maintenance</li>
+      <ul style="list-style: disc inside; margin: 0.48em 0 0 1.2em; color: #8ac926; font-size: 1em;">
+        <li>Over <b>75,000</b> lines, <b>0</b> warnings/errors in production</li>
+        <li>No panics, <code>unwrap()</code>, or unchecked errors</li>
+        <li>All Clippy + compiler warnings are fixed and forbidden</li>
+        <li>All features, binaries, and tests pass clean</li>
+        <li>Auditable, open source, long-term maintenance ready</li>
       </ul>
     </div>
   </div>
