@@ -1,2 +1,2 @@
-# prymechain
-Website for the PrymeChain blockchain
+# remzarchain
+Website for the remzar blockchain
