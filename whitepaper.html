@@ -1,5 +1,5 @@
-```html
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -336,13 +336,14 @@
       }
     }
   </style>
+
 </head>
 
 <body class="home">
   <!-- NAVBAR: logo toggles menu -->
   <nav class="site-nav closed">
     <a class="brand" href="#" aria-label="Toggle menu">
-      <img src="remzar_logo.png" alt="Remzar logo" width="32" height="32" />
+      <img src="logo.png" alt="Remzar logo" width="32" height="32" />
     </a>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
@@ -351,22 +352,26 @@
   </nav>
 
   <!-- HERO -->
+
   <header class="wp-hero">
     <div class="eyebrow">REMZAR Whitepaper • Protocol Version 1.0.0</div>
 
-    <h1>An energy-efficient, single-binary, post-quantum Layer-1 blockchain.</h1>
+```
+<h1>An energy-efficient, single-binary, post-quantum Layer-1 blockchain.</h1>
 
-    <p>
-      Remzar is built as a sovereign base layer for verified data, local ownership,
-      deterministic validation, transparent issuance, and repeatable auditability.
-    </p>
+<p>
+  Remzar is built as a sovereign base layer for verified data, local ownership,
+  deterministic validation, transparent issuance, and repeatable auditability.
+</p>
 
-    <div class="hero-actions">
-      <a class="btn-primary" href="REMZAR%20whitepaper.docx" download>
-        Download Whitepaper
-      </a>
-      <a class="btn-secondary" href="#abstract">Read Summary</a>
-    </div>
+<div class="hero-actions">
+  <a class="btn-primary" href="REMZAR%20whitepaper.docx" download>
+    Download Whitepaper
+  </a>
+  <a class="btn-secondary" href="#abstract">Read Summary</a>
+</div>
+```
+
   </header>
 
   <main>
@@ -381,246 +386,250 @@
         </p>
       </div>
 
-      <div class="facts">
-        <div class="fact">
-          <span>Project</span>
-          <strong>Remzar Blockchain</strong>
-        </div>
+```
+  <div class="facts">
+    <div class="fact">
+      <span>Project</span>
+      <strong>Remzar Blockchain</strong>
+    </div>
 
-        <div class="fact">
-          <span>Native Asset</span>
-          <strong>REMZAR / ZAR</strong>
-        </div>
+    <div class="fact">
+      <span>Native Asset</span>
+      <strong>REMZAR / ZAR</strong>
+    </div>
 
-        <div class="fact">
-          <span>Mainnet Start Date</span>
-          <strong>2026-06-26</strong>
-        </div>
+    <div class="fact">
+      <span>Mainnet Start Date</span>
+      <strong>2026-06-26</strong>
+    </div>
 
-        <div class="fact">
-          <span>Consensus</span>
-          <strong>Proof of Registry</strong>
-        </div>
+    <div class="fact">
+      <span>Consensus</span>
+      <strong>Proof of Registry</strong>
+    </div>
 
-        <div class="fact">
-          <span>Block Cadence</span>
-          <strong>30-Second Slots</strong>
-        </div>
+    <div class="fact">
+      <span>Block Cadence</span>
+      <strong>30-Second Slots</strong>
+    </div>
 
-        <div class="fact">
-          <span>Signature Model</span>
-          <strong>ML-DSA-65 Block Attestation</strong>
-        </div>
+    <div class="fact">
+      <span>Signature Model</span>
+      <strong>ML-DSA-65 Block Attestation</strong>
+    </div>
 
-        <div class="fact">
-          <span>Max Block Size</span>
-          <strong>2 MiB</strong>
-        </div>
+    <div class="fact">
+      <span>Max Block Size</span>
+      <strong>2 MiB</strong>
+    </div>
 
-        <div class="fact">
-          <span>Maximum Supply</span>
-          <strong>200,000,000 ZAR</strong>
-        </div>
+    <div class="fact">
+      <span>Maximum Supply</span>
+      <strong>200,000,000 ZAR</strong>
+    </div>
+  </div>
+</section>
+
+<!-- ABSTRACT -->
+<section class="wp-section" id="abstract">
+  <div class="abstract-card">
+    <h2>Abstract</h2>
+
+    <p>
+      Remzar is a single-binary, post-quantum-oriented Layer-1 blockchain
+      implemented in Rust. It is designed to make public blockchain operation
+      practical from one executable while preserving bounded validation rules,
+      deterministic block production, local wallet ownership, and built-in
+      auditability.
+    </p>
+
+    <p>
+      Remzar replaces energy-race mining with Proof of Registry, a
+      deterministic validator-participation model built around explicit
+      registry membership, validator warmup, quarantine, heartbeat renewal,
+      lease expiry, dead-peer eviction, deterministic leader selection, and
+      failover rounds inside 30-second block slots.
+    </p>
+
+    <p>
+      Block batches are committed through Merkle roots and attested with one
+      ML-DSA-65 post-quantum signature per block. This keeps signature
+      verification bounded at the block level instead of turning
+      post-quantum verification into a per-transaction bottleneck. The native
+      asset, REMZAR, has a 200 million ZAR maximum supply and is issued
+      through validator block rewards only.
+    </p>
+  </div>
+</section>
+
+<!-- WHITEPAPER COVERAGE -->
+<section class="wp-section">
+  <div class="section-heading">
+    <h2>What the whitepaper covers</h2>
+    <p>
+      The document explains Remzar as a working Layer-1 protocol and
+      implementation, not only as a theoretical proposal.
+    </p>
+  </div>
+
+  <div class="grid">
+    <article class="card">
+      <h3>Node Operation</h3>
+      <p>
+        Single-binary workflow for wallet creation, encrypted key storage,
+        database initialization, P2P networking, transfers, balances,
+        diagnostics, and audit exports.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Proof of Registry</h3>
+      <p>
+        Deterministic validator participation through registry membership,
+        leader scheduling, activation delay, quarantine, heartbeat renewal,
+        lease expiry, and deterministic failover.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Post-Quantum Cryptography</h3>
+      <p>
+        ML-DSA-65 block attestation, ML-KEM-768 roadmap support,
+        Merkle-root batch commitments, BLAKE3-style hashing, and encrypted
+        local wallet storage.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Block Model</h3>
+      <p>
+        30-second block slots, 2-second proposer pacing, bounded failover
+        windows, 2 MiB maximum block size, and 8,192 transactions per block.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Economics</h3>
+      <p>
+        200 million ZAR capped supply, reward-only issuance, rewardless
+        genesis block, no protocol-level premine, and deterministic reward
+        ladder.
+      </p>
+    </article>
+
+    <article class="card">
+      <h3>Security Boundaries</h3>
+      <p>
+        Defensive limits for malformed payloads, oversized batches, invalid
+        signatures, replay attempts, double-spends, stale blocks, dead peers,
+        and validator unavailability.
+      </p>
+    </article>
+  </div>
+</section>
+
+<!-- TABLE OF CONTENTS -->
+<section class="wp-section">
+  <div class="section-heading">
+    <h2>Whitepaper structure</h2>
+    <p>
+      The Remzar whitepaper is organized as a full protocol document covering
+      technical design, economics, security, and operational roadmap.
+    </p>
+  </div>
+
+  <ul class="toc">
+    <li><strong>1.</strong> Introduction</li>
+    <li><strong>2.</strong> Design Goals</li>
+    <li><strong>3.</strong> Protocol Facts at a Glance</li>
+    <li><strong>4.</strong> System Overview</li>
+    <li><strong>5.</strong> Cryptographic Stack</li>
+    <li><strong>6.</strong> Block Model</li>
+    <li><strong>7.</strong> Consensus: Proof of Registry</li>
+    <li><strong>8.</strong> Transactions, Accounts, and State</li>
+    <li><strong>9.</strong> Peer-to-Peer Networking</li>
+    <li><strong>10.</strong> Storage, Logs, and Audit Exports</li>
+    <li><strong>11.</strong> Economics and Tokenomics</li>
+    <li><strong>12.</strong> Genesis and Initial Distribution</li>
+    <li><strong>13.</strong> Performance and Benchmarks</li>
+    <li><strong>14.</strong> Security Considerations</li>
+    <li><strong>15.</strong> Roadmap</li>
+    <li><strong>16.</strong> Conclusion</li>
+  </ul>
+</section>
+
+<!-- DOWNLOAD -->
+<section class="wp-section">
+  <div class="download-panel">
+    <div class="download-card">
+      <h2>Download the Remzar whitepaper</h2>
+
+      <p>
+        Download the full Remzar whitepaper for the complete protocol
+        description, including consensus, cryptography, storage, economics,
+        tokenomics, benchmarks, audit model, and roadmap.
+      </p>
+
+      <div class="hero-actions" style="justify-content: flex-start;">
+        <a class="btn-primary" href="REMZAR%20whitepaper.docx" download>
+          Download DOCX
+        </a>
+        <a class="btn-secondary" href="contact.html">
+          Contact Remzar
+        </a>
       </div>
-    </section>
 
-    <!-- ABSTRACT -->
-    <section class="wp-section" id="abstract">
-      <div class="abstract-card">
-        <h2>Abstract</h2>
+      <p class="note">
+        Make sure the file in your GitHub repository is named exactly
+        <strong>REMZAR whitepaper.docx</strong>. If you rename it to something
+        simpler like <strong>remzar-whitepaper.docx</strong>, update the
+        download link in this page to match.
+      </p>
+    </div>
 
-        <p>
-          Remzar is a single-binary, post-quantum-oriented Layer-1 blockchain
-          implemented in Rust. It is designed to make public blockchain operation
-          practical from one executable while preserving bounded validation rules,
-          deterministic block production, local wallet ownership, and built-in
-          auditability.
-        </p>
+    <div class="download-card">
+      <h2>Document status</h2>
 
-        <p>
-          Remzar replaces energy-race mining with Proof of Registry, a
-          deterministic validator-participation model built around explicit
-          registry membership, validator warmup, quarantine, heartbeat renewal,
-          lease expiry, dead-peer eviction, deterministic leader selection, and
-          failover rounds inside 30-second block slots.
-        </p>
+      <p>
+        Remzar is presented as a working Rust-based Layer-1 blockchain
+        implementation. The whitepaper focuses on the base protocol rather
+        than promotional claims: node operation, storage, networking,
+        post-quantum cryptography, Proof of Registry consensus, economics,
+        security boundaries, and operational roadmap.
+      </p>
 
-        <p>
-          Block batches are committed through Merkle roots and attested with one
-          ML-DSA-65 post-quantum signature per block. This keeps signature
-          verification bounded at the block level instead of turning
-          post-quantum verification into a per-transaction bottleneck. The native
-          asset, REMZAR, has a 200 million ZAR maximum supply and is issued
-          through validator block rewards only.
-        </p>
-      </div>
-    </section>
+      <p>
+        Protocol Version: <strong>1.0.0</strong><br />
+        Mainnet Start Date: <strong>2026-06-26</strong><br />
+        Website: <strong>www.remzar.com</strong>
+      </p>
+    </div>
+  </div>
+</section>
 
-    <!-- WHITEPAPER COVERAGE -->
-    <section class="wp-section">
-      <div class="section-heading">
-        <h2>What the whitepaper covers</h2>
-        <p>
-          The document explains Remzar as a working Layer-1 protocol and
-          implementation, not only as a theoretical proposal.
-        </p>
-      </div>
+<!-- FINAL CTA -->
+<section class="wp-cta">
+  <div class="card">
+    <h2>Explore Remzar</h2>
+    <p>
+      Learn how Remzar combines deterministic Proof of Registry consensus,
+      post-quantum-oriented block attestation, Merkle batch commitments,
+      local wallet ownership, transparent issuance, and built-in audit
+      tooling into a sovereign Layer-1 blockchain.
+    </p>
 
-      <div class="grid">
-        <article class="card">
-          <h3>Node Operation</h3>
-          <p>
-            Single-binary workflow for wallet creation, encrypted key storage,
-            database initialization, P2P networking, transfers, balances,
-            diagnostics, and audit exports.
-          </p>
-        </article>
+    <div class="hero-actions">
+      <a class="btn-primary" href="about.html">About Remzar</a>
+      <a class="btn-secondary" href="contact.html">Contact</a>
+    </div>
+  </div>
+</section>
+```
 
-        <article class="card">
-          <h3>Proof of Registry</h3>
-          <p>
-            Deterministic validator participation through registry membership,
-            leader scheduling, activation delay, quarantine, heartbeat renewal,
-            lease expiry, and deterministic failover.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Post-Quantum Cryptography</h3>
-          <p>
-            ML-DSA-65 block attestation, ML-KEM-768 roadmap support,
-            Merkle-root batch commitments, BLAKE3-style hashing, and encrypted
-            local wallet storage.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Block Model</h3>
-          <p>
-            30-second block slots, 2-second proposer pacing, bounded failover
-            windows, 2 MiB maximum block size, and 8,192 transactions per block.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Economics</h3>
-          <p>
-            200 million ZAR capped supply, reward-only issuance, rewardless
-            genesis block, no protocol-level premine, and deterministic reward
-            ladder.
-          </p>
-        </article>
-
-        <article class="card">
-          <h3>Security Boundaries</h3>
-          <p>
-            Defensive limits for malformed payloads, oversized batches, invalid
-            signatures, replay attempts, double-spends, stale blocks, dead peers,
-            and validator unavailability.
-          </p>
-        </article>
-      </div>
-    </section>
-
-    <!-- TABLE OF CONTENTS -->
-    <section class="wp-section">
-      <div class="section-heading">
-        <h2>Whitepaper structure</h2>
-        <p>
-          The Remzar whitepaper is organized as a full protocol document covering
-          technical design, economics, security, and operational roadmap.
-        </p>
-      </div>
-
-      <ul class="toc">
-        <li><strong>1.</strong> Introduction</li>
-        <li><strong>2.</strong> Design Goals</li>
-        <li><strong>3.</strong> Protocol Facts at a Glance</li>
-        <li><strong>4.</strong> System Overview</li>
-        <li><strong>5.</strong> Cryptographic Stack</li>
-        <li><strong>6.</strong> Block Model</li>
-        <li><strong>7.</strong> Consensus: Proof of Registry</li>
-        <li><strong>8.</strong> Transactions, Accounts, and State</li>
-        <li><strong>9.</strong> Peer-to-Peer Networking</li>
-        <li><strong>10.</strong> Storage, Logs, and Audit Exports</li>
-        <li><strong>11.</strong> Economics and Tokenomics</li>
-        <li><strong>12.</strong> Genesis and Initial Distribution</li>
-        <li><strong>13.</strong> Performance and Benchmarks</li>
-        <li><strong>14.</strong> Security Considerations</li>
-        <li><strong>15.</strong> Roadmap</li>
-        <li><strong>16.</strong> Conclusion</li>
-      </ul>
-    </section>
-
-    <!-- DOWNLOAD -->
-    <section class="wp-section">
-      <div class="download-panel">
-        <div class="download-card">
-          <h2>Download the Remzar whitepaper</h2>
-
-          <p>
-            Download the full Remzar whitepaper for the complete protocol
-            description, including consensus, cryptography, storage, economics,
-            tokenomics, benchmarks, audit model, and roadmap.
-          </p>
-
-          <div class="hero-actions" style="justify-content: flex-start;">
-            <a class="btn-primary" href="REMZAR%20whitepaper.docx" download>
-              Download DOCX
-            </a>
-            <a class="btn-secondary" href="contact.html">
-              Contact Remzar
-            </a>
-          </div>
-
-          <p class="note">
-            Make sure the file in your GitHub repository is named exactly
-            <strong>REMZAR whitepaper.docx</strong>. If you rename it to something
-            simpler like <strong>remzar-whitepaper.docx</strong>, update the
-            download link in this page to match.
-          </p>
-        </div>
-
-        <div class="download-card">
-          <h2>Document status</h2>
-
-          <p>
-            Remzar is presented as a working Rust-based Layer-1 blockchain
-            implementation. The whitepaper focuses on the base protocol rather
-            than promotional claims: node operation, storage, networking,
-            post-quantum cryptography, Proof of Registry consensus, economics,
-            security boundaries, and operational roadmap.
-          </p>
-
-          <p>
-            Protocol Version: <strong>1.0.0</strong><br />
-            Mainnet Start Date: <strong>2026-06-26</strong><br />
-            Website: <strong>www.remzar.com</strong>
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- FINAL CTA -->
-    <section class="wp-cta">
-      <div class="card">
-        <h2>Explore Remzar</h2>
-        <p>
-          Learn how Remzar combines deterministic Proof of Registry consensus,
-          post-quantum-oriented block attestation, Merkle batch commitments,
-          local wallet ownership, transparent issuance, and built-in audit
-          tooling into a sovereign Layer-1 blockchain.
-        </p>
-
-        <div class="hero-actions">
-          <a class="btn-primary" href="about.html">About Remzar</a>
-          <a class="btn-secondary" href="contact.html">Contact</a>
-        </div>
-      </div>
-    </section>
   </main>
 
   <!-- FOOTER -->
+
   <footer>
     <p>© 2026 Remzar Blockchain. All rights reserved.</p>
     <p>
@@ -630,6 +639,7 @@
   </footer>
 
   <!-- Toggle menu script -->
+
   <script>
     document
       .querySelector(".site-nav .brand")
@@ -640,6 +650,6 @@
         nav.classList.toggle("open");
       });
   </script>
+
 </body>
 </html>
-```
