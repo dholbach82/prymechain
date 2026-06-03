@@ -1,89 +1,645 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>White Paper – PrymeChain</title>
+
+  <title>Whitepaper – Remzar Blockchain</title>
+  <meta
+    name="description"
+    content="Read the Remzar whitepaper: an energy-efficient, single-binary, post-quantum-oriented Layer-1 blockchain built with Proof of Registry consensus, bounded validation, transparent issuance, and local auditability."
+  />
+
+  <link rel="canonical" href="https://www.remzar.com/whitepaper.html" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    :root {
+      --rz-bg: #05070a;
+      --rz-panel: rgba(255, 255, 255, 0.055);
+      --rz-panel-strong: rgba(255, 255, 255, 0.09);
+      --rz-border: rgba(255, 255, 255, 0.12);
+      --rz-text: #eef4ff;
+      --rz-muted: #a8b3c7;
+      --rz-accent: #76ff03;
+      --rz-accent-soft: rgba(118, 255, 3, 0.12);
+      --rz-max: 1120px;
+    }
+
+    body.home {
+      background:
+        radial-gradient(circle at top left, rgba(118, 255, 3, 0.13), transparent 32rem),
+        radial-gradient(circle at top right, rgba(70, 130, 255, 0.11), transparent 34rem),
+        var(--rz-bg);
+      color: var(--rz-text);
+    }
+
+    .wp-hero,
+    .wp-section,
+    .wp-cta {
+      width: min(var(--rz-max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .wp-hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: fit-content;
+      margin: 0 auto;
+      padding: 0.45rem 0.8rem;
+      border: 1px solid var(--rz-border);
+      border-radius: 999px;
+      background: var(--rz-panel);
+      color: var(--rz-accent);
+      font-size: 0.88rem;
+      font-weight: 800;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    .wp-hero h1 {
+      max-width: 980px;
+      margin: 1.35rem auto 1rem;
+      font-size: clamp(2.4rem, 6vw, 5.4rem);
+      line-height: 1;
+      letter-spacing: -0.055em;
+    }
+
+    .wp-hero p {
+      max-width: 860px;
+      margin: 0 auto;
+      color: var(--rz-muted);
+      font-size: clamp(1.08rem, 2vw, 1.32rem);
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0.78rem 1.15rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--rz-accent);
+      color: #061008;
+      border: 1px solid var(--rz-accent);
+    }
+
+    .btn-secondary {
+      color: var(--rz-text);
+      border: 1px solid var(--rz-border);
+      background: var(--rz-panel);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .wp-section {
+      padding: 3.5rem 0;
+    }
+
+    .section-heading {
+      max-width: 840px;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-heading.center {
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    .section-heading h2 {
+      margin: 0 0 0.85rem;
+      font-size: clamp(1.9rem, 3.5vw, 3.1rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .section-heading p {
+      margin: 0;
+      color: var(--rz-muted);
+      font-size: 1.05rem;
+      line-height: 1.75;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.85rem;
+      margin-top: 1.5rem;
+    }
+
+    .fact,
+    .card {
+      border: 1px solid var(--rz-border);
+      background: linear-gradient(180deg, var(--rz-panel-strong), var(--rz-panel));
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.22);
+    }
+
+    .fact {
+      border-radius: 18px;
+      padding: 1rem;
+    }
+
+    .fact span {
+      display: block;
+      color: var(--rz-muted);
+      font-size: 0.82rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--rz-text);
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border-radius: 22px;
+      padding: 1.35rem;
+    }
+
+    .card h3 {
+      margin: 0 0 0.65rem;
+      font-size: 1.15rem;
+      letter-spacing: -0.02em;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--rz-muted);
+      line-height: 1.7;
+    }
+
+    .abstract-card {
+      border: 1px solid var(--rz-border);
+      border-radius: 26px;
+      padding: 2rem;
+      background:
+        linear-gradient(135deg, rgba(118, 255, 3, 0.11), rgba(70, 130, 255, 0.08)),
+        var(--rz-panel);
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.25);
+    }
+
+    .abstract-card h2 {
+      margin-top: 0;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      letter-spacing: -0.035em;
+    }
+
+    .abstract-card p {
+      color: var(--rz-muted);
+      line-height: 1.8;
+      font-size: 1.05rem;
+    }
+
+    .toc {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.75rem;
+      margin: 1.5rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .toc li {
+      border: 1px solid var(--rz-border);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      background: var(--rz-panel);
+      color: var(--rz-muted);
+      line-height: 1.55;
+    }
+
+    .toc strong {
+      color: var(--rz-text);
+    }
+
+    .download-panel {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 1rem;
+      align-items: stretch;
+    }
+
+    .download-card {
+      border: 1px solid var(--rz-border);
+      border-radius: 26px;
+      padding: 2rem;
+      background: linear-gradient(180deg, var(--rz-panel-strong), var(--rz-panel));
+      box-shadow: 0 28px 90px rgba(0, 0, 0, 0.25);
+    }
+
+    .download-card h2 {
+      margin: 0 0 0.85rem;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.1;
+      letter-spacing: -0.035em;
+    }
+
+    .download-card p {
+      color: var(--rz-muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    .note {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-left: 3px solid var(--rz-accent);
+      border-radius: 14px;
+      background: var(--rz-accent-soft);
+      color: var(--rz-text);
+      line-height: 1.75;
+    }
+
+    .wp-cta {
+      padding: 4rem 0 5rem;
+      text-align: center;
+    }
+
+    .wp-cta .card {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .wp-cta h2 {
+      margin-top: 0;
+      font-size: clamp(1.9rem, 3.5vw, 3rem);
+      line-height: 1.1;
+      letter-spacing: -0.04em;
+    }
+
+    .wp-cta p {
+      max-width: 720px;
+      margin: 0 auto;
+      color: var(--rz-muted);
+      line-height: 1.75;
+    }
+
+    footer p {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--rz-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 900px) {
+      .facts,
+      .grid,
+      .grid.two,
+      .toc,
+      .download-panel {
+        grid-template-columns: 1fr;
+      }
+
+      .wp-hero {
+        padding-top: 4rem;
+      }
+    }
+  </style>
 </head>
+
 <body class="home">
   <!-- NAVBAR: logo toggles menu -->
   <nav class="site-nav closed">
     <a class="brand" href="#" aria-label="Toggle menu">
-      <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
+      <img src="remzar_logo.png" alt="Remzar logo" width="32" height="32" />
     </a>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="whitepaper.html" class="active">White Paper</a>
+    <a href="whitepaper.html" class="active">Whitepaper</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- MAIN HEADER -->
-  <header>
-    <h1>Pryme White Paper</h1>
+  <!-- HERO -->
+  <header class="wp-hero">
+    <div class="eyebrow">REMZAR Whitepaper • Protocol Version 1.0.0</div>
+
+    <h1>An energy-efficient, single-binary, post-quantum Layer-1 blockchain.</h1>
+
+    <p>
+      Remzar is built as a sovereign base layer for verified data, local ownership,
+      deterministic validation, transparent issuance, and repeatable auditability.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="REMZAR%20whitepaper.docx" download>
+        Download Whitepaper
+      </a>
+      <a class="btn-secondary" href="#abstract">Read Summary</a>
+    </div>
   </header>
 
-  <!-- ABSTRACT SECTION -->
-  <section style="text-align: justify;">
-    <h2>Abstract</h2>
-    <p>
-      Pryme is an interactive, lightweight, and powerful blockchain that provides a
-      universal, self-sustaining system for database creation, private-key
-      management, and reward-based node participation. It supports peer-to-peer coin
-      transfers with an integrated audit system, enabling users to seamlessly debug
-      their keys and interact with the chain through simple inputs. Participants may
-      register their wallet addresses to earn rewards by running nodes, all within a
-      robust and energy-efficient framework.
-    </p>
-    <p>
-      Built entirely in Rust, Pryme leverages Rust’s safety guarantees and includes
-      built-in anomaly tracking and prevention. Users can audit the complete ledger
-      in seconds and export it as JSON or PDF. Operating as a standalone system
-      without third-party interference, Pryme delivers a minimalist yet vigorous
-      interactive experience powered by cutting-edge technology.
-    </p>
-  </section>
+  <main>
+    <!-- PROTOCOL FACTS -->
+    <section class="wp-section">
+      <div class="section-heading center">
+        <h2>Protocol facts at a glance</h2>
+        <p>
+          The Remzar whitepaper defines the base protocol: node operation,
+          storage, networking, post-quantum cryptography, Proof of Registry
+          consensus, economics, security boundaries, and roadmap.
+        </p>
+      </div>
 
-  <!-- DOWNLOAD SECTION -->
-<section>
-  <h2>Download</h2>
-  <p>
-    <a
-      href="https://raw.githubusercontent.com/dholbach82/prymechain/main/pryme_whitepaper.pdf"
-      download="pryme_whitepaper.pdf"
-      rel="noopener"
-      style="color: #fff; text-decoration: underline; font-weight: bold;"
-    >
-      📄 Download the PrymeChain White Paper (PDF)
-    </a>
-  </p>
-</section>
+      <div class="facts">
+        <div class="fact">
+          <span>Project</span>
+          <strong>Remzar Blockchain</strong>
+        </div>
 
-<!-- Learn More CTA -->
-<section style="text-align: center; margin: 2rem 0;">
-  <a
-    href="contact.html"
-    style="color: #76ff03; text-decoration: none; font-weight: bold;"
-  >
-    Learn More →
-  </a>
-</section>
-  
+        <div class="fact">
+          <span>Native Asset</span>
+          <strong>REMZAR / ZAR</strong>
+        </div>
+
+        <div class="fact">
+          <span>Mainnet Start Date</span>
+          <strong>2026-06-26</strong>
+        </div>
+
+        <div class="fact">
+          <span>Consensus</span>
+          <strong>Proof of Registry</strong>
+        </div>
+
+        <div class="fact">
+          <span>Block Cadence</span>
+          <strong>30-Second Slots</strong>
+        </div>
+
+        <div class="fact">
+          <span>Signature Model</span>
+          <strong>ML-DSA-65 Block Attestation</strong>
+        </div>
+
+        <div class="fact">
+          <span>Max Block Size</span>
+          <strong>2 MiB</strong>
+        </div>
+
+        <div class="fact">
+          <span>Maximum Supply</span>
+          <strong>200,000,000 ZAR</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABSTRACT -->
+    <section class="wp-section" id="abstract">
+      <div class="abstract-card">
+        <h2>Abstract</h2>
+
+        <p>
+          Remzar is a single-binary, post-quantum-oriented Layer-1 blockchain
+          implemented in Rust. It is designed to make public blockchain operation
+          practical from one executable while preserving bounded validation rules,
+          deterministic block production, local wallet ownership, and built-in
+          auditability.
+        </p>
+
+        <p>
+          Remzar replaces energy-race mining with Proof of Registry, a
+          deterministic validator-participation model built around explicit
+          registry membership, validator warmup, quarantine, heartbeat renewal,
+          lease expiry, dead-peer eviction, deterministic leader selection, and
+          failover rounds inside 30-second block slots.
+        </p>
+
+        <p>
+          Block batches are committed through Merkle roots and attested with one
+          ML-DSA-65 post-quantum signature per block. This keeps signature
+          verification bounded at the block level instead of turning
+          post-quantum verification into a per-transaction bottleneck. The native
+          asset, REMZAR, has a 200 million ZAR maximum supply and is issued
+          through validator block rewards only.
+        </p>
+      </div>
+    </section>
+
+    <!-- WHITEPAPER COVERAGE -->
+    <section class="wp-section">
+      <div class="section-heading">
+        <h2>What the whitepaper covers</h2>
+        <p>
+          The document explains Remzar as a working Layer-1 protocol and
+          implementation, not only as a theoretical proposal.
+        </p>
+      </div>
+
+      <div class="grid">
+        <article class="card">
+          <h3>Node Operation</h3>
+          <p>
+            Single-binary workflow for wallet creation, encrypted key storage,
+            database initialization, P2P networking, transfers, balances,
+            diagnostics, and audit exports.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Proof of Registry</h3>
+          <p>
+            Deterministic validator participation through registry membership,
+            leader scheduling, activation delay, quarantine, heartbeat renewal,
+            lease expiry, and deterministic failover.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Post-Quantum Cryptography</h3>
+          <p>
+            ML-DSA-65 block attestation, ML-KEM-768 roadmap support,
+            Merkle-root batch commitments, BLAKE3-style hashing, and encrypted
+            local wallet storage.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Block Model</h3>
+          <p>
+            30-second block slots, 2-second proposer pacing, bounded failover
+            windows, 2 MiB maximum block size, and 8,192 transactions per block.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Economics</h3>
+          <p>
+            200 million ZAR capped supply, reward-only issuance, rewardless
+            genesis block, no protocol-level premine, and deterministic reward
+            ladder.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Security Boundaries</h3>
+          <p>
+            Defensive limits for malformed payloads, oversized batches, invalid
+            signatures, replay attempts, double-spends, stale blocks, dead peers,
+            and validator unavailability.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- TABLE OF CONTENTS -->
+    <section class="wp-section">
+      <div class="section-heading">
+        <h2>Whitepaper structure</h2>
+        <p>
+          The Remzar whitepaper is organized as a full protocol document covering
+          technical design, economics, security, and operational roadmap.
+        </p>
+      </div>
+
+      <ul class="toc">
+        <li><strong>1.</strong> Introduction</li>
+        <li><strong>2.</strong> Design Goals</li>
+        <li><strong>3.</strong> Protocol Facts at a Glance</li>
+        <li><strong>4.</strong> System Overview</li>
+        <li><strong>5.</strong> Cryptographic Stack</li>
+        <li><strong>6.</strong> Block Model</li>
+        <li><strong>7.</strong> Consensus: Proof of Registry</li>
+        <li><strong>8.</strong> Transactions, Accounts, and State</li>
+        <li><strong>9.</strong> Peer-to-Peer Networking</li>
+        <li><strong>10.</strong> Storage, Logs, and Audit Exports</li>
+        <li><strong>11.</strong> Economics and Tokenomics</li>
+        <li><strong>12.</strong> Genesis and Initial Distribution</li>
+        <li><strong>13.</strong> Performance and Benchmarks</li>
+        <li><strong>14.</strong> Security Considerations</li>
+        <li><strong>15.</strong> Roadmap</li>
+        <li><strong>16.</strong> Conclusion</li>
+      </ul>
+    </section>
+
+    <!-- DOWNLOAD -->
+    <section class="wp-section">
+      <div class="download-panel">
+        <div class="download-card">
+          <h2>Download the Remzar whitepaper</h2>
+
+          <p>
+            Download the full Remzar whitepaper for the complete protocol
+            description, including consensus, cryptography, storage, economics,
+            tokenomics, benchmarks, audit model, and roadmap.
+          </p>
+
+          <div class="hero-actions" style="justify-content: flex-start;">
+            <a class="btn-primary" href="REMZAR%20whitepaper.docx" download>
+              Download DOCX
+            </a>
+            <a class="btn-secondary" href="contact.html">
+              Contact Remzar
+            </a>
+          </div>
+
+          <p class="note">
+            Make sure the file in your GitHub repository is named exactly
+            <strong>REMZAR whitepaper.docx</strong>. If you rename it to something
+            simpler like <strong>remzar-whitepaper.docx</strong>, update the
+            download link in this page to match.
+          </p>
+        </div>
+
+        <div class="download-card">
+          <h2>Document status</h2>
+
+          <p>
+            Remzar is presented as a working Rust-based Layer-1 blockchain
+            implementation. The whitepaper focuses on the base protocol rather
+            than promotional claims: node operation, storage, networking,
+            post-quantum cryptography, Proof of Registry consensus, economics,
+            security boundaries, and operational roadmap.
+          </p>
+
+          <p>
+            Protocol Version: <strong>1.0.0</strong><br />
+            Mainnet Start Date: <strong>2026-06-26</strong><br />
+            Website: <strong>www.remzar.com</strong>
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="wp-cta">
+      <div class="card">
+        <h2>Explore Remzar</h2>
+        <p>
+          Learn how Remzar combines deterministic Proof of Registry consensus,
+          post-quantum-oriented block attestation, Merkle batch commitments,
+          local wallet ownership, transparent issuance, and built-in audit
+          tooling into a sovereign Layer-1 blockchain.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="about.html">About Remzar</a>
+          <a class="btn-secondary" href="contact.html">Contact</a>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Pryme Blockchain</p>
+    <p>© 2026 Remzar Blockchain. All rights reserved.</p>
+    <p>
+      Information on this website is provided for technical and educational
+      purposes and should not be interpreted as financial advice.
+    </p>
   </footer>
 
   <!-- Toggle menu script -->
   <script>
-    document.querySelector('.site-nav .brand').addEventListener('click', function(e) {
-      e.preventDefault();
-      const nav = document.querySelector('.site-nav');
-      nav.classList.toggle('closed');
-      nav.classList.toggle('open');
-    });
+    document
+      .querySelector(".site-nav .brand")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        const nav = document.querySelector(".site-nav");
+        nav.classList.toggle("closed");
+        nav.classList.toggle("open");
+      });
   </script>
 </body>
 </html>
- 
+```
