@@ -1,121 +1,699 @@
+```html
 <!DOCTYPE html>
-
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – PrymeChain</title>
+
+  <title>About – Remzar Blockchain</title>
+  <meta
+    name="description"
+    content="Learn about Remzar, a Rust-based Layer-1 blockchain built for single-binary operation, Proof of Registry consensus, post-quantum-oriented security, bounded validation, and local auditability."
+  />
+
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    :root {
+      --rz-bg: #05070a;
+      --rz-panel: rgba(255, 255, 255, 0.055);
+      --rz-panel-strong: rgba(255, 255, 255, 0.09);
+      --rz-border: rgba(255, 255, 255, 0.12);
+      --rz-text: #eef4ff;
+      --rz-muted: #a8b3c7;
+      --rz-accent: #76ff03;
+      --rz-accent-soft: rgba(118, 255, 3, 0.12);
+      --rz-max: 1100px;
+    }
+
+    body.home {
+      background:
+        radial-gradient(circle at top left, rgba(118, 255, 3, 0.12), transparent 32rem),
+        radial-gradient(circle at top right, rgba(70, 130, 255, 0.10), transparent 32rem),
+        var(--rz-bg);
+      color: var(--rz-text);
+    }
+
+    .about-hero,
+    .about-section,
+    .about-cta {
+      width: min(var(--rz-max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .about-hero {
+      padding: 5rem 0 3rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--rz-border);
+      border-radius: 999px;
+      background: var(--rz-panel);
+      color: var(--rz-accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .about-hero h1 {
+      max-width: 900px;
+      margin: 1.25rem auto 1rem;
+      font-size: clamp(2.3rem, 5vw, 4.6rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .about-hero p {
+      max-width: 820px;
+      margin: 0 auto;
+      color: var(--rz-muted);
+      font-size: clamp(1.05rem, 2vw, 1.25rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin-top: 2rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
+    }
+
+    .btn-primary {
+      background: var(--rz-accent);
+      color: #061008;
+      border: 1px solid var(--rz-accent);
+    }
+
+    .btn-secondary {
+      color: var(--rz-text);
+      border: 1px solid var(--rz-border);
+      background: var(--rz-panel);
+    }
+
+    .btn-primary:hover,
+    .btn-secondary:hover {
+      transform: translateY(-2px);
+    }
+
+    .about-section {
+      padding: 3rem 0;
+    }
+
+    .about-section h2 {
+      margin: 0 0 1rem;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+    }
+
+    .about-section > p,
+    .section-lead {
+      max-width: 880px;
+      color: var(--rz-muted);
+      line-height: 1.75;
+      font-size: 1.05rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .grid.two {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .card {
+      border: 1px solid var(--rz-border);
+      border-radius: 18px;
+      padding: 1.25rem;
+      background: linear-gradient(180deg, var(--rz-panel-strong), var(--rz-panel));
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .card h3 {
+      margin: 0 0 0.65rem;
+      font-size: 1.12rem;
+    }
+
+    .card p {
+      margin: 0;
+      color: var(--rz-muted);
+      line-height: 1.65;
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0.8rem;
+      margin-top: 1.5rem;
+    }
+
+    .fact {
+      border: 1px solid var(--rz-border);
+      border-radius: 16px;
+      padding: 1rem;
+      background: var(--rz-panel);
+    }
+
+    .fact span {
+      display: block;
+      color: var(--rz-muted);
+      font-size: 0.82rem;
+      margin-bottom: 0.35rem;
+    }
+
+    .fact strong {
+      display: block;
+      color: var(--rz-text);
+      font-size: 1.05rem;
+      line-height: 1.3;
+    }
+
+    .feature-list {
+      display: grid;
+      gap: 0.75rem;
+      margin: 1.25rem 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .feature-list li {
+      border: 1px solid var(--rz-border);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      background: var(--rz-panel);
+      color: var(--rz-muted);
+      line-height: 1.55;
+    }
+
+    .feature-list strong {
+      color: var(--rz-text);
+    }
+
+    .cli-wrap {
+      margin-top: 1.5rem;
+    }
+
+    .cli-wrap img {
+      display: block;
+      width: 100%;
+      max-width: 920px;
+      margin: 0 auto 1.25rem;
+      border-radius: 18px;
+      border: 1px solid var(--rz-border);
+      box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+    }
+
+    .operations {
+      columns: 2;
+      column-gap: 2rem;
+      max-width: 980px;
+      margin: 1.5rem auto 0;
+      padding-left: 1.2rem;
+      color: var(--rz-muted);
+      line-height: 1.7;
+    }
+
+    .operations li {
+      break-inside: avoid;
+      margin-bottom: 0.45rem;
+    }
+
+    .operations strong {
+      color: var(--rz-text);
+    }
+
+    .note {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-left: 3px solid var(--rz-accent);
+      border-radius: 12px;
+      background: var(--rz-accent-soft);
+      color: var(--rz-text);
+      line-height: 1.7;
+    }
+
+    .about-cta {
+      text-align: center;
+      padding: 4rem 0 5rem;
+    }
+
+    .about-cta .card {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .about-cta p {
+      color: var(--rz-muted);
+      line-height: 1.7;
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .grid.two,
+      .facts {
+        grid-template-columns: 1fr;
+      }
+
+      .operations {
+        columns: 1;
+      }
+
+      .about-hero {
+        padding-top: 3.5rem;
+      }
+    }
+  </style>
 </head>
 
 <body class="home">
   <!-- NAVBAR: logo toggles menu -->
   <nav class="site-nav closed">
     <a class="brand" href="#" aria-label="Toggle menu">
-      <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
+      <img src="remzar_logo.png" alt="Remzar logo" width="32" height="32" />
     </a>
     <a href="index.html">Home</a>
     <a href="about.html">About</a>
-    <a href="whitepaper.html">White Paper</a>
+    <a href="whitepaper.html">Whitepaper</a>
     <a href="contact.html">Contact</a>
   </nav>
 
-  <!-- MAIN HEADER -->
-  <header>
-    <h1>About Pryme Blockchain</h1>
+  <!-- HERO -->
+  <header class="about-hero">
+    <div class="eyebrow">Rust Layer-1 • Proof of Registry • Post-Quantum-Oriented</div>
+
+    <h1>About Remzar Blockchain</h1>
+
+    <p>
+      Remzar is a Rust-based Layer-1 blockchain designed to be simple to operate,
+      bounded to validate, locally auditable, energy-efficient, and prepared for
+      post-quantum cryptographic requirements.
+    </p>
+
+    <div class="hero-actions">
+      <a class="btn-primary" href="whitepaper.html">Read the Whitepaper</a>
+      <a class="btn-secondary" href="#protocol-facts">View Protocol Facts</a>
+    </div>
   </header>
 
-  <!-- 1 • Why PrymeChain -->
-  <section style="text-align: justify;">
-    <p>
-      Most blockchain platforms today demand complex setups, steep learning curves,
-      and high energy consumption—putting a barrier between you and the power of
-      decentralized apps. Pryme Blockchain changes all that with a true <em>plug-and-play</em>
-      experience.
-    </p>
+  <main>
+    <!-- WHAT IS REMZAR -->
+    <section class="about-section">
+      <h2>What is Remzar?</h2>
 
-    <p>
-      In under one minute you can download a single Rust binary, create your wallet,
-      register as a validator, launch the network, send tokens, self-audit your
-      ledger, and begin earning rewards—all through an intuitive CLI. No cloud
-      services, no extra dependencies, no buried configuration files.
-    </p>
+      <p>
+        Remzar is a sovereign base-layer blockchain built around one core idea:
+        a public blockchain should not require hidden services, complicated
+        infrastructure, or energy-race mining to be useful. A Remzar node is
+        designed to run from a single compiled Rust binary that includes wallet
+        creation, encrypted key storage, local database setup, peer-to-peer
+        networking, validator registration, block production, transfers, chain
+        inspection, diagnostics, and audit exports.
+      </p>
 
-    <p>
-      Our lightweight consensus and built-in anomaly tracking deliver enterprise-grade
-      security and on-chain verifiability while using a fraction of the energy of
-      Proof-of-Work systems. By making key management, auditing, and rewards
-      first-class features, Pryme brings blockchain from a niche developer tool
-      to an everyday utility for newcomers, merchants, and large organizations alike.
-    </p>
-  </section>
+      <div class="grid">
+        <article class="card">
+          <h3>Single-Binary Operation</h3>
+          <p>
+            The node, wallet tools, validator workflow, diagnostics, and audit
+            utilities are designed to operate from one executable instead of a
+            collection of separate services.
+          </p>
+        </article>
 
-  <!-- 2 • The Menu-Driven CLI -->
-  <section>
-    <h2>Pryme Management Menu</h2>
-    <img src="menu.png" alt="Pryme CLI menu screenshot" style="max-width:100%; border-radius:8px; margin-bottom:1rem;">
-    <p style="text-align: justify;">
-      Pryme’s interactive, number-driven CLI surfaces every subsystem through
-      a single, easy-to-navigate menu. Each option maps directly to a Rust module
-      and deterministic data flow:
-    </p>
+        <article class="card">
+          <h3>Bounded Validation</h3>
+          <p>
+            Blocks, transaction counts, transaction buffers, timestamp windows,
+            validator timing, and serialized data paths are controlled by explicit
+            protocol limits.
+          </p>
+        </article>
 
-    <ol style="max-width:800px; margin:auto; text-align:left;">
-      <li><strong>Setup&nbsp;Database (1)</strong> – auto-creates on-disk key-value stores.</li>
-      <li><strong>Generate New Wallet (2)</strong> – creates an Ed448 key-pair, encrypts it with your pass-phrase, and stores it securely.</li>
-      <li><strong>Open Encrypted Key (3)</strong> – decrypts a private key in a temp buffer and auto-wipes after 30 s.</li>
-      <li><strong>Setup Registry DB (4)</strong> – initializes the validator registry.</li>
-      <li><strong>Register Node (5)</strong> – adds your wallet to the registry and schedules rewards.</li>
-      <li><strong>View Participant Status (6)</strong> – shows active validators vs. available slots.</li>
-      <li><strong>Start Node 🚀 (7)</strong> – boots P2P, mints the genesis block, and begins consensus.</li>
-      <li><strong>Backup Wallet (8)</strong> – exports an encrypted wallet file.</li>
-      <li><strong>List Wallets (9)</strong> – scans the wallet directory and prints all addresses.</li>
-      <li><strong>Blockchain Console (10)</strong> – streams live block headers and lets you browse history.</li>
-      <li><strong>Send PRYME (11)</strong> – transfer coins instantly with zero fees.</li>
-      <li><strong>Receive PRYME (12)</strong> – check pending coins instantly.</li>
-      <li><strong>Balance of Wallet (13)</strong> – query any address balance.</li>
-      <li><strong>Debug DB Keys (14)</strong> – low-level key inspection for power users.</li>
-      <li><strong>Debug Logs (15)</strong> – export error logs as JSON.</li>
-      <li><strong>Pryme Info / FAQ (16)</strong> – built-in docs and best-practices.</li>
-      <li><strong>Audit Report (17)</strong> – export any block range as JSON or PDF with BLAKE3 fingerprints.</li>
-      <li><strong>Exit (18)</strong> – gracefully shuts down all services.</li>
-    </ol>
-  </section>
+        <article class="card">
+          <h3>Local Auditability</h3>
+          <p>
+            Chain data, logs, rewards, transaction batches, and audit reports are
+            stored locally and can be inspected without relying on a centralized
+            explorer.
+          </p>
+        </article>
+      </div>
+    </section>
 
-  <!-- 3 • Advantage of Simplicity -->
-  <section>
-    <h2>Advantage&nbsp;of&nbsp;Simplicity (AOS)</h2>
-    <p style="text-align: justify;">
-      Pryme replaces energy-hungry, multi-round consensus with AoS—three pillars that
-      keep the chain lightweight and transparent:
-    </p>
-    <ul style="max-width:800px; margin:auto; text-align:left; list-style: disc inside;">
-      <li><strong>Transparent Registry</strong> – every validator opt-in is recorded on-chain.</li>
-      <li><strong>Deterministic Participation</strong> – fixed 60 s block cadence, no mining race.</li>
-      <li><strong>On-Chain Rewards</strong> – predictable halving schedule mints 100 Million PRYME untill the year 2200AD.</li>
-    </ul>
-  </section>
+    <!-- WHY REMZAR -->
+    <section class="about-section">
+      <h2>Why Remzar Exists</h2>
 
-  <!-- 4 • Tokenomics Snapshot -->
-  <section>
-    <h2>Tokenomics at a Glance</h2>
-    <p style="text-align: justify;">
-      Total supply is capped at <strong>300 Million PRYME</strong>:
-      200 Million pre-minted for liquidity, development, research, and founders;
-      100 Million released to validators via the halving schedule.
-    </p>
-  </section>
+      <p>
+        Many blockchain systems place a gap between public participation and the
+        practical work required to operate a node. Remzar is designed around the
+        opposite assumption: users, validators, merchants, and organizations
+        should be able to run infrastructure directly, inspect what the node is
+        doing, and verify the chain with clear local tools.
+      </p>
 
-  <!-- Learn More CTA -->
-  <section style="text-align:center; margin:2rem 0;">
-    <a href="whitepaper.html" style="color:#76ff03; text-decoration:none; font-weight:bold;">
-      Learn More →
-    </a>
-  </section>
-  
+      <ul class="feature-list">
+        <li>
+          <strong>No open-ended mining race:</strong> Remzar avoids Proof-of-Work
+          hash competition and uses deterministic validator participation instead.
+        </li>
+        <li>
+          <strong>No hidden operational stack:</strong> wallet tools, node runtime,
+          registry logic, logs, balances, transfers, and audit exports are exposed
+          through the Remzar node workflow.
+        </li>
+        <li>
+          <strong>No protocol-level premine:</strong> the current monetary design
+          starts with a rewardless genesis block and releases supply through
+          validator block rewards only.
+        </li>
+      </ul>
+    </section>
+
+    <!-- PROTOCOL FACTS -->
+    <section class="about-section" id="protocol-facts">
+      <h2>Protocol Facts at a Glance</h2>
+
+      <p class="section-lead">
+        Remzar keeps its base protocol understandable by using clear constants
+        for timing, block limits, validator participation, cryptographic
+        commitments, and monetary issuance.
+      </p>
+
+      <div class="facts">
+        <div class="fact">
+          <span>Protocol Version</span>
+          <strong>1.0.0</strong>
+        </div>
+
+        <div class="fact">
+          <span>Native Asset</span>
+          <strong>REMZAR / ZAR</strong>
+        </div>
+
+        <div class="fact">
+          <span>Implementation</span>
+          <strong>Rust, Edition 2024</strong>
+        </div>
+
+        <div class="fact">
+          <span>Consensus</span>
+          <strong>Proof of Registry</strong>
+        </div>
+
+        <div class="fact">
+          <span>Block Cadence</span>
+          <strong>30 Seconds</strong>
+        </div>
+
+        <div class="fact">
+          <span>Max Block Size</span>
+          <strong>2 MiB</strong>
+        </div>
+
+        <div class="fact">
+          <span>Max Transactions</span>
+          <strong>8,192 Per Block</strong>
+        </div>
+
+        <div class="fact">
+          <span>Max Supply</span>
+          <strong>200,000,000 ZAR</strong>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROOF OF REGISTRY -->
+    <section class="about-section">
+      <h2>Proof of Registry Consensus</h2>
+
+      <p>
+        Remzar uses Proof of Registry, an energy-efficient validator participation
+        model based on explicit registry membership, deterministic eligibility,
+        leader selection, validator warmup, quarantine, heartbeat renewal, lease
+        expiry, dead-peer eviction, and deterministic failover rounds.
+      </p>
+
+      <div class="grid two">
+        <article class="card">
+          <h3>Deterministic Participation</h3>
+          <p>
+            Validators must be known to the registry before they can propose
+            blocks. Eligible validators are selected from shared chain state, so
+            honest nodes can independently verify whether a block was produced by
+            the correct leader for a slot.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Energy-Efficient Block Production</h3>
+          <p>
+            Remzar does not use an electricity-driven mining race. Its short
+            local pacing puzzle acts as proposer rate control, while the outer
+            chain cadence remains organized around 30-second slots.
+          </p>
+        </article>
+      </div>
+
+      <p class="note">
+        During early network growth, validator admission may use bootstrap safety
+        controls. The long-term direction is transparent, rule-driven onboarding
+        while preserving bounded validation and operational simplicity.
+      </p>
+    </section>
+
+    <!-- POST QUANTUM -->
+    <section class="about-section">
+      <h2>Post-Quantum-Oriented Security</h2>
+
+      <p>
+        Remzar’s cryptographic design centers block attestation around ML-DSA-65,
+        a post-quantum digital signature scheme. Instead of requiring one
+        post-quantum verification for every transaction in a block, Remzar commits
+        transaction batches through Merkle roots and signs the block-level
+        commitment once.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>ML-DSA-65 Block Attestation</h3>
+          <p>
+            Each block batch is authenticated with one post-quantum signature at
+            the block level, keeping signature verification bounded as block
+            transaction counts grow.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Merkle Batch Commitments</h3>
+          <p>
+            Transactions are hashed into transaction IDs, committed into a Merkle
+            root, and verified through deterministic inclusion proofs when needed.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Encrypted Wallet Storage</h3>
+          <p>
+            Wallet storage is designed around local ownership, passphrase
+            hardening, authenticated encryption, and memory-hygiene discipline.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- MANAGEMENT MENU -->
+    <section class="about-section">
+      <h2>Single-Binary Node Workflow</h2>
+
+      <p class="section-lead">
+        Remzar is designed to make the full node lifecycle accessible from one
+        guided command-line workflow. The same program exposes wallet generation,
+        database setup, node operation, transfers, validator status, chain
+        inspection, logs, and audit exports.
+      </p>
+
+      <div class="cli-wrap">
+        <img
+          src="menu.png"
+          alt="Remzar command-line node menu screenshot"
+        />
+      </div>
+
+      <ol class="operations">
+        <li><strong>Setup Database</strong> — initialize local directories and RocksDB databases.</li>
+        <li><strong>Generate Wallet</strong> — create keys and encrypted wallet files.</li>
+        <li><strong>Start Node</strong> — bootstrap P2P, initialize chain state, and enter the runtime loop.</li>
+        <li><strong>Blockchain Console</strong> — inspect blocks, headers, and chain activity.</li>
+        <li><strong>Send Coins</strong> — unlock a wallet, build a transaction, sign, and propagate.</li>
+        <li><strong>Receive Coins</strong> — view inbound wallet information.</li>
+        <li><strong>Participant Status</strong> — inspect validator registry and leader schedule state.</li>
+        <li><strong>Check Balance</strong> — read account state and compute balances.</li>
+        <li><strong>List Wallets</strong> — discover local encrypted wallets.</li>
+        <li><strong>Certificate / NFT</strong> — hash files or data objects and create verifiable receipts.</li>
+        <li><strong>Send Chat</strong> — send signed peer messages over the P2P layer.</li>
+        <li><strong>Send File</strong> — transfer files in chunks with integrity verification.</li>
+        <li><strong>Wallet Utilities</strong> — perform guarded wallet maintenance and recovery actions.</li>
+        <li><strong>Backup Wallet</strong> — copy encrypted wallet files for safe storage.</li>
+        <li><strong>Debug Wallet Keys</strong> — validate decryptability and inspect safe metadata.</li>
+        <li><strong>Export Logs</strong> — export bounded structured logs from the log database.</li>
+        <li><strong>Audit Report</strong> — export chain ranges as JSON or PDF-style audit artifacts.</li>
+        <li><strong>Games</strong> — optional module outside the base consensus core.</li>
+        <li><strong>FAQ</strong> — access built-in operator documentation.</li>
+        <li><strong>Exit</strong> — shut down the workflow safely.</li>
+      </ol>
+    </section>
+
+    <!-- TOKENOMICS -->
+    <section class="about-section">
+      <h2>Transparent Tokenomics</h2>
+
+      <p>
+        REMZAR is the native asset of the Remzar Layer-1 blockchain. The current
+        monetary policy is designed to be simple to inspect and reproduce:
+        maximum supply is capped at 200 million ZAR, genesis is rewardless, and
+        issuance comes from validator block rewards only.
+      </p>
+
+      <div class="grid">
+        <article class="card">
+          <h3>200 Million Max Supply</h3>
+          <p>
+            Remzar’s maximum supply is capped at 200,000,000 ZAR under the current
+            protocol configuration.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>No Protocol-Level Premine</h3>
+          <p>
+            The current configuration has no founder mint, treasury mint, staking
+            bucket, development reserve, or gaming allocation.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Reward-Only Issuance</h3>
+          <p>
+            Supply enters circulation through validator block rewards until the
+            maximum supply is exhausted.
+          </p>
+        </article>
+      </div>
+
+      <p class="note">
+        The reward ladder begins at 50 ZAR per block, steps down through fixed
+        500,000-block eras, and then stabilizes at 1 ZAR per block until the
+        supply cap is reached.
+      </p>
+    </section>
+
+    <!-- AUDITABILITY -->
+    <section class="about-section">
+      <h2>Auditability by Default</h2>
+
+      <p>
+        Remzar treats auditability as part of the base node design. Blocks,
+        transaction batches, rewards, logs, validator information, Merkle roots,
+        and cryptographic fingerprints can be exported through built-in tooling.
+        This allows operators, merchants, exchanges, and organizations to inspect
+        local chain activity without depending entirely on third-party explorers.
+      </p>
+
+      <div class="grid two">
+        <article class="card">
+          <h3>Structured Local Storage</h3>
+          <p>
+            Remzar uses RocksDB-backed storage segmented by chain state, accounts,
+            transactions, rewards, logs, peer data, registry state, and canonical
+            chain views.
+          </p>
+        </article>
+
+        <article class="card">
+          <h3>Exportable Audit Reports</h3>
+          <p>
+            Operators can export bounded chain ranges and logs with hashes,
+            Merkle roots, validator identifiers, reward information, transaction
+            summaries, and cryptographic fingerprints.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <!-- SECURITY BOUNDARIES -->
+    <section class="about-section">
+      <h2>Security Boundaries</h2>
+
+      <p>
+        Remzar is designed to fail closed against malformed inputs, oversized
+        payloads, stale blocks, invalid signatures, replay attempts, double-spend
+        attempts, unstable peers, and unavailable validators. The protocol uses
+        explicit limits for block size, transaction count, transaction buffers,
+        timestamp skew, slot drift, validator renewal, and peer eviction.
+      </p>
+
+      <ul class="feature-list">
+        <li><strong>Block size bound:</strong> 2 MiB maximum block size.</li>
+        <li><strong>Transaction bound:</strong> 8,192 transactions per block.</li>
+        <li><strong>Buffer bound:</strong> 2 MiB disk-backed transaction buffer.</li>
+        <li><strong>Timing bound:</strong> 30-second slots with deterministic failover windows.</li>
+        <li><strong>Cryptographic bound:</strong> one ML-DSA-65 block-batch signature per block commitment.</li>
+      </ul>
+    </section>
+
+    <!-- CTA -->
+    <section class="about-cta">
+      <div class="card">
+        <h2>Built for Simple Operation and Direct Verification</h2>
+        <p>
+          Remzar’s goal is not to hide complexity behind hosted infrastructure.
+          Its goal is to keep the base layer understandable: one program, one
+          chain, bounded validation, deterministic consensus, transparent
+          issuance, post-quantum-oriented cryptography, and repeatable auditability.
+        </p>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="whitepaper.html">Read the Whitepaper</a>
+          <a class="btn-secondary" href="contact.html">Contact Remzar</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Pryme Blockchain</p>
+    <p>© 2026 Remzar Blockchain. All rights reserved.</p>
+    <p>
+      Remzar is a protocol project. Information on this website is provided for
+      technical and educational purposes and should not be interpreted as
+      financial advice.
+    </p>
   </footer>
 
   <!-- Toggle menu script -->
@@ -131,3 +709,4 @@
   </script>
 </body>
 </html>
+```
