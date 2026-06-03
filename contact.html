@@ -1,66 +1,285 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact – PrymeChain</title>
+
+  <title>Contact – Remzar Blockchain</title>
+  <meta
+    name="description"
+    content="Contact Remzar Blockchain for questions, contributions, technical inquiries, validator participation, and protocol information."
+  />
+
+  <link rel="canonical" href="https://www.remzar.com/contact.html" />
   <link rel="stylesheet" href="styles.css" />
+
+  <style>
+    :root {
+      --rz-bg: #05070a;
+      --rz-panel: rgba(255, 255, 255, 0.055);
+      --rz-panel-strong: rgba(255, 255, 255, 0.09);
+      --rz-border: rgba(255, 255, 255, 0.12);
+      --rz-text: #eef4ff;
+      --rz-muted: #a8b3c7;
+      --rz-accent: #76ff03;
+      --rz-accent-soft: rgba(118, 255, 3, 0.12);
+      --rz-max: 960px;
+    }
+
+    body.home {
+      background:
+        radial-gradient(circle at top left, rgba(118, 255, 3, 0.12), transparent 32rem),
+        radial-gradient(circle at top right, rgba(70, 130, 255, 0.10), transparent 32rem),
+        var(--rz-bg);
+      color: var(--rz-text);
+    }
+
+    .contact-hero,
+    .contact-section {
+      width: min(var(--rz-max), calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .contact-hero {
+      padding: 5rem 0 2.5rem;
+      text-align: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.45rem 0.75rem;
+      border: 1px solid var(--rz-border);
+      border-radius: 999px;
+      background: var(--rz-panel);
+      color: var(--rz-accent);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .contact-hero h1 {
+      max-width: 850px;
+      margin: 1.25rem auto 1rem;
+      font-size: clamp(2.3rem, 5vw, 4.4rem);
+      line-height: 1.05;
+      letter-spacing: -0.04em;
+    }
+
+    .contact-hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      color: var(--rz-muted);
+      font-size: clamp(1.05rem, 2vw, 1.22rem);
+      line-height: 1.7;
+    }
+
+    .contact-section {
+      padding: 2rem 0 5rem;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .contact-card {
+      border: 1px solid var(--rz-border);
+      border-radius: 20px;
+      padding: 1.5rem;
+      background: linear-gradient(180deg, var(--rz-panel-strong), var(--rz-panel));
+      box-shadow: 0 20px 70px rgba(0, 0, 0, 0.22);
+    }
+
+    .contact-card h2 {
+      margin: 0 0 0.75rem;
+      font-size: 1.35rem;
+      letter-spacing: -0.02em;
+    }
+
+    .contact-card p {
+      margin: 0 0 1rem;
+      color: var(--rz-muted);
+      line-height: 1.7;
+    }
+
+    .contact-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.1rem;
+      border-radius: 999px;
+      border: 1px solid var(--rz-accent);
+      background: var(--rz-accent);
+      color: #061008;
+      text-decoration: none;
+      font-weight: 800;
+      transition: transform 0.18s ease;
+    }
+
+    .contact-link:hover {
+      transform: translateY(-2px);
+    }
+
+    .secondary-link {
+      border-color: var(--rz-border);
+      background: var(--rz-panel);
+      color: var(--rz-text);
+    }
+
+    .info-box {
+      margin-top: 1rem;
+      padding: 1rem;
+      border-left: 3px solid var(--rz-accent);
+      border-radius: 14px;
+      background: var(--rz-accent-soft);
+      color: var(--rz-text);
+      line-height: 1.7;
+    }
+
+    .contact-list {
+      margin: 1rem 0 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      gap: 0.75rem;
+    }
+
+    .contact-list li {
+      border: 1px solid var(--rz-border);
+      border-radius: 14px;
+      padding: 0.9rem 1rem;
+      background: var(--rz-panel);
+      color: var(--rz-muted);
+      line-height: 1.6;
+    }
+
+    .contact-list strong {
+      color: var(--rz-text);
+    }
+
+    footer p {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      color: var(--rz-muted);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 800px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-hero {
+        padding-top: 3.5rem;
+      }
+    }
+  </style>
 </head>
+
 <body class="home">
   <!-- NAVBAR: logo toggles menu -->
-<nav class="site-nav closed">
-  <a class="brand" href="#" aria-label="Toggle menu">
-    <img src="pryme_logo.png" alt="PRYME logo" width="32" height="32">
-  </a>
-  <a href="index.html">Home</a>
-  <a href="about.html">About</a>
-  <a href="whitepaper.html">White Paper</a>
-  <a href="contact.html">Contact</a>
-</nav>
+  <nav class="site-nav closed">
+    <a class="brand" href="#" aria-label="Toggle menu">
+      <img src="remzar_logo.png" alt="Remzar logo" width="32" height="32" />
+    </a>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="whitepaper.html">Whitepaper</a>
+    <a href="contact.html">Contact</a>
+  </nav>
 
+  <!-- HERO -->
+  <header class="contact-hero">
+    <div class="eyebrow">Contact Remzar</div>
 
-  <!-- MAIN HEADER -->
-  <header>
-    <h1>Contact Us</h1>
+    <h1>Get in Touch with Remzar Blockchain</h1>
+
+    <p>
+      For protocol questions, technical inquiries, validator participation,
+      contributions, or general communication, contact the Remzar team directly.
+    </p>
   </header>
 
   <!-- CONTACT SECTION -->
-<section>
-  <p>Questions or contributions?</p>
-  <p>
-    Email us at
-    <a href="mailto:prymechain@gmail.com" style="color: #fff; font-size: 1.08rem; font-weight: bold;">
-      prymechain@gmail.com
-    </a>
-  </p>
-  <p>
-    Social Media:
-    <a href="https://x.com/prymechain" target="_blank" rel="noopener" style="color: #fff; font-size: 1.08rem; font-weight: bold;">
-      X&nbsp;@prymechain
-    </a>
-    &nbsp;|&nbsp;
-    <a href="https://t.me/prymechain" target="_blank" rel="noopener" style="color: #fff; font-size: 1.08rem; font-weight: bold;">
-      Telegram&nbsp;@prymechain
-    </a>
-  </p>
-</section>
+  <main class="contact-section">
+    <div class="contact-grid">
+      <section class="contact-card">
+        <h2>Email</h2>
+        <p>
+          Use email for serious inquiries, collaboration, technical questions,
+          validator interest, exchange communication, documentation requests, or
+          project updates.
+        </p>
 
+        <a class="contact-link" href="mailto:remzarchain@gmail.com">
+          remzarchain@gmail.com
+        </a>
+      </section>
 
+      <section class="contact-card">
+        <h2>Official Website</h2>
+        <p>
+          Visit the official Remzar website for project information, protocol
+          materials, whitepaper access, and future public updates.
+        </p>
 
+        <a
+          class="contact-link secondary-link"
+          href="https://www.remzar.com"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          www.remzar.com
+        </a>
+      </section>
+    </div>
+
+    <section class="contact-card" style="margin-top: 1rem;">
+      <h2>What to Contact Us About</h2>
+
+      <ul class="contact-list">
+        <li><strong>Protocol questions:</strong> Remzar Layer-1 design, Proof of Registry, tokenomics, node operation, or auditability.</li>
+        <li><strong>Validator participation:</strong> node operation, registry participation, network setup, or future onboarding.</li>
+        <li><strong>Technical collaboration:</strong> Rust development, security review, cryptography, networking, documentation, or infrastructure.</li>
+        <li><strong>Business inquiries:</strong> listings, integrations, partnerships, merchant use cases, and organizational adoption.</li>
+      </ul>
+
+      <p class="info-box">
+        Remzar is a Rust-based Layer-1 blockchain focused on single-binary
+        operation, bounded validation, Proof of Registry consensus,
+        post-quantum-oriented cryptography, transparent issuance, and local
+        auditability.
+      </p>
+    </section>
+  </main>
 
   <!-- FOOTER -->
   <footer>
-    <p>© 2025 Pryme Blockchain</p>
+    <p>© 2026 Remzar Blockchain. All rights reserved.</p>
+    <p>
+      Information on this website is provided for technical and educational
+      purposes and should not be interpreted as financial advice.
+    </p>
   </footer>
 
   <!-- Toggle menu script -->
   <script>
-    document.querySelector('.site-nav .brand').addEventListener('click', function(e) {
-      e.preventDefault();
-      const nav = document.querySelector('.site-nav');
-      nav.classList.toggle('closed');
-      nav.classList.toggle('open');
-    });
+    document
+      .querySelector(".site-nav .brand")
+      .addEventListener("click", function (e) {
+        e.preventDefault();
+        const nav = document.querySelector(".site-nav");
+        nav.classList.toggle("closed");
+        nav.classList.toggle("open");
+      });
   </script>
 </body>
 </html>
+```
