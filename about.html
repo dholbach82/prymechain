@@ -654,10 +654,7 @@
   <h2>Security Boundaries</h2>
 
   <p>
-    Remzar is designed to fail closed against malformed inputs, oversized
-    payloads, stale blocks, invalid signatures, replay attempts, double-spend
-    attempts, unstable peers, and unavailable validators. The protocol uses
-    explicit limits for block size, transaction count, transaction buffers,
+    The protocol uses explicit limits for block size, transaction count, transaction buffers,
     timestamp skew, slot drift, validator renewal, and peer eviction.
   </p>
 
@@ -665,7 +662,7 @@
     <li><strong>Block size bound:</strong> 2 MiB maximum block size.</li>
     <li><strong>Transaction bound:</strong> 7500 transactions per block.</li>
     <li><strong>Buffer bound:</strong> 2 MiB disk-backed transaction buffer.</li>
-    <li><strong>Timing bound:</strong> 30-second slots with deterministic failover windows.</li>
+    <li><strong>Timing bound:</strong> 30-second slots with deterministic windows.</li>
     <li><strong>Cryptographic bound:</strong> one ML-KEM-768 key encapsulation per block key commitment.</li>
     <li><strong>Cryptographic bound:</strong> one ML-DSA-65 block-batch signature per block commitment.</li>
   </ul>
